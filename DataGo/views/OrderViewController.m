@@ -167,24 +167,18 @@
 {
     if([_tag isEqualToString:@"ORDER_DAY"])
     {
-        if(!isFirstLoad)
-        {
-            CGRect frame = CGRectMake(0,44, 703,72);
-            self.infoView.frame = frame;
+        CGRect frame = CGRectMake(0,0, 320,78);
+        self.infoView.frame = frame;
         
-            frame = CGRectMake(0,116,703,615);
-            self.tableView.frame = frame;
-        }
-        else {
-            isFirstLoad = NO;
-        }
+        frame = CGRectMake(0,78,320,320);
+        self.tableView.frame = frame;
     }
     else if([_tag isEqualToString:@"ORDER_WEEK"])
     {
-        CGRect frame = CGRectMake(0,44, 703,252);
+        CGRect frame = CGRectMake(0,0, 320,78);
         self.infoView.frame = frame;
 
-        frame = CGRectMake(0,296,703,435);
+        frame = CGRectMake(0,78,320,320);
         self.tableView.frame = frame;
     }
     
@@ -225,15 +219,24 @@
 
 -(IBAction)switchPeriod:(id)sender
 {
+    self.startTime = [[NSDate alloc]initWithTimeIntervalSinceNow:(8*60*60)];
+    self.endTime = [[NSDate alloc]initWithTimeIntervalSinceNow:(8*60*60)];
+
     if(isDayView)
     {
         isDayView = false;
+        self.startTime = [DateHelper getFirstTimeOfWeek:self.startTime];
+        self.endTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.startTime];
+
         self.navigationItem.leftBarButtonItem.title = @"日";
         [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"ORDER_WEEK"];
     }
     else
     {
         isDayView = true;
+        self.startTime = [DateHelper getBeginOfDay:self.startTime];
+        self.endTime  = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:self.startTime];
+
         self.navigationItem.leftBarButtonItem.title = @"周";
         [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"ORDER_DAY"];
     }
@@ -499,33 +502,22 @@
 
         //start to 
         _trade = (TopTradeModel *)obj;
-        cell.createdTime.text = [[NSString alloc]initWithFormat:@"购买:%@",[[_trade.createdTime description] substringToIndex:19]];
+        NSString * text;
+        text = [[_trade.createdTime description] substringToIndex:19];
+        text = [text substringFromIndex:5];
+        cell.createdTime.text = [[NSString alloc]initWithFormat:@"购:%@",text];
+                                 
         if([_trade.paymentTime timeIntervalSince1970] <= [_trade.createdTime timeIntervalSince1970])
             cell.paymentTime.text = @"未付款";
         else
-            cell.paymentTime.text = [[NSString alloc]initWithFormat:@"付款:%@",[[_trade.paymentTime description] substringToIndex:19]];
-        if([_trade.status isEqualToString:@"WAIT_BUYER_PAY"])
-            cell.status.text = @"等待买家付款";
-        else if([_trade.status isEqualToString:@"WAIT_SELLER_SEND_GOODS"])
-            cell.status.text = @"等待卖家发货";
-        else if([_trade.status isEqualToString:@"WAIT_BUYER_CONFIRM_GOODS"])
-            cell.status.text = @"等待买家确认收货";
-        else if([_trade.status isEqualToString:@"TRADE_FINISHED"])
-            cell.status.text = @"交易成功";
-        else if([_trade.status isEqualToString:@"TRADE_CLOSED"])
-            cell.status.text = @"交易关闭";
-        else if([_trade.status isEqualToString:@"TRADE_CLOSED_BY_TAOBAO"])
-            cell.status.text = @"交易被淘宝关闭";
-        else
-            cell.status.text = _trade.status;
+        {
+            text = [[_trade.paymentTime description] substringToIndex:19];
+            text = [text substringFromIndex:5];
+
+            cell.paymentTime.text = [[NSString alloc]initWithFormat:@"款:%@",text];
+        }
         
-        
-        cell.buyer.text = [[NSString alloc]initWithFormat:@"买家:%@",_trade.buyer_nick];
-        cell.rec.text = [[NSString alloc]initWithFormat:@"姓名:%@/%@",_trade.receiver_name,_trade.receiver_city];
-        cell.note.text = [[NSString alloc]initWithFormat:@"备注:%@",_trade.note];
-        cell.post_fee.text = [[NSString alloc]initWithFormat:@"邮费:%@",[self formatDouble: _trade.post_fee]];
-        cell.payment.text = [[NSString alloc]initWithFormat:@"总价:%@",[self formatDouble: _trade.payment]];
-        cell.service_fee.text = [[NSString alloc]initWithFormat:@"特别:%@",[self formatDouble: _trade.service_fee]];
+        cell.buyer.text = [[NSString alloc]initWithFormat:@"%@ : 总%@邮%@特%@",_trade.buyer_nick,[self formatDouble: _trade.payment],[self formatDouble: _trade.post_fee],[self formatDouble: _trade.service_fee]];
         
         return cell;
     }
@@ -552,24 +544,20 @@
 
         cell.title.text = [[NSString alloc]initWithFormat:@"%@",order.title];
         cell.sku.text = [[NSString alloc]initWithFormat:@"%@",order.sku_name];
-        cell.price.text = [[NSString alloc]initWithFormat:@"单价:%@",[self formatDouble: order.price]];
-        cell.num.text = [[NSString alloc]initWithFormat:@" * %@ - %@",[NSNumber numberWithInt: order.num],[NSNumber numberWithInt: order.refund_num]];
-        cell.payment.text = [[NSString alloc]initWithFormat:@"总价:%@",[self formatDouble: order.total_fee]];
-        cell.discount_fee.text = [[NSString alloc]initWithFormat:@"优惠:%@",[self formatDouble: order.discount_fee]];
-        cell.adjust_fee.text = [[NSString alloc]initWithFormat:@"调整:%@",[self formatDouble: order.adjust_fee]];
+        cell.payment.text = [[NSString alloc]initWithFormat:@"总:%@单%@量%@ - %@",[self formatDouble: order.total_fee],[self formatDouble: order.price],[NSNumber numberWithInt: order.num],[NSNumber numberWithInt: order.refund_num]];
 
         if([order.status isEqualToString:@"WAIT_BUYER_PAY"])
-            cell.status.text = @"等待买家付款";
+            cell.status.text = @"待付款";
         else if([order.status isEqualToString:@"WAIT_SELLER_SEND_GOODS"])
-            cell.status.text = @"等待卖家发货";
+            cell.status.text = @"待发货";
         else if([order.status isEqualToString:@"WAIT_BUYER_CONFIRM_GOODS"])
-            cell.status.text = @"等待买家确认收货";
+            cell.status.text = @"待确认收货";
         else if([order.status isEqualToString:@"TRADE_FINISHED"])
             cell.status.text = @"交易成功";
         else if([order.status isEqualToString:@"TRADE_CLOSED"])
             cell.status.text = @"交易关闭";
         else if([order.status isEqualToString:@"TRADE_CLOSED_BY_TAOBAO"])
-            cell.status.text = @"交易被淘宝关闭";
+            cell.status.text = @"淘宝关闭";
         else
             cell.status.text = order.status;
         
@@ -582,7 +570,15 @@
 	
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 100.f;
+    
+    id obj = [self.dataList objectAtIndex:indexPath.row];
+
+    if([obj isKindOfClass: [TopTradeModel class] ]) //if trade
+    {
+        return 64.f;
+    }
+    else
+        return 100.0f;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
