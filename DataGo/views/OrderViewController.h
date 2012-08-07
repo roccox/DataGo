@@ -40,6 +40,8 @@
 @property (nonatomic,strong) IBOutlet UIView * toolView;
 @property (nonatomic,strong) IBOutlet UIView * rootView;
 
+@property (nonatomic,strong) IBOutlet UIDatePicker * datePicker;
+
 
 @property (nonatomic,strong) id obj;
 
@@ -47,6 +49,11 @@
 -(IBAction)switchPeriod:(id)sender;
 
 -(IBAction)updateData:(id)sender;
+
+-(IBAction)goNext:(id)sender;
+-(IBAction)goPrevious:(id)sender;
+-(IBAction)goSomeDay:(id)sender;
+
 
 -(IBAction)allTrades:(id)sender;
 -(IBAction)notPayTrades:(id)sender;

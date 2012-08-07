@@ -18,7 +18,7 @@
 
 @implementation OrderViewController
 
-@synthesize tableView,infoView,dataList,tradeList,toolView;
+@synthesize tableView,infoView,dataList,tradeList,toolView,datePicker;
 @synthesize startTime,endTime,obj;
 
 #pragma mark - Managing the detail item
@@ -251,6 +251,67 @@
     [self showWaiting];
     [topData refreshTrades];
 }
+
+
+-(IBAction)goNext:(id)sender
+{
+    if([_tag isEqualToString:@"ORDER_DAY"])
+    {
+        self.startTime = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:self.startTime];
+        self.endTime = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:self.endTime];
+    }
+    else if([_tag isEqualToString:@"ORDER_WEEK"])
+    {
+        self.startTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.startTime];
+        self.endTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.endTime];
+    }
+    
+    [self getData];
+}
+
+-(IBAction)goPrevious:(id)sender
+{
+    
+    if([_tag isEqualToString:@"ORDER_DAY"])
+    {
+        self.startTime = [[NSDate alloc]initWithTimeInterval:-(24*60*60) sinceDate:self.startTime];
+        self.endTime = [[NSDate alloc]initWithTimeInterval:-(24*60*60) sinceDate:self.endTime];
+    }
+    else if([_tag isEqualToString:@"ORDER_WEEK"])
+    {
+        self.startTime = [[NSDate alloc]initWithTimeInterval:-(7*24*60*60) sinceDate:self.startTime];
+        self.endTime = [[NSDate alloc]initWithTimeInterval:-(7*24*60*60) sinceDate:self.endTime];
+    }
+    
+    [self getData];
+}
+
+
+-(IBAction)goSomeDay:(id)sender
+{
+    //
+    NSDate * from;
+    NSDate * to;
+    from = datePicker.date;
+    from = [[NSDate alloc]initWithTimeInterval:(8*60*60) sinceDate:from];
+    if([_tag isEqualToString:@"ORDER_DAY"])
+    {
+        to = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:from];
+    }
+    else if([_tag isEqualToString:@"ORDER_WEEK"])
+    {
+        from = [DateHelper getFirstTimeOfWeek:from];
+        to = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.endTime];
+    }
+    
+    if([from timeIntervalSince1970] < [[NSDate date] timeIntervalSince1970])
+    {
+        self.startTime = from;
+        self.endTime = to;
+        [self getData];
+    }
+}
+
 
 #pragma - taobao
 -(void) notifyItemRefresh:(BOOL)isFinished withTag:(NSString*) tag
