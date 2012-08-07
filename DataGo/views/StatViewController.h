@@ -27,5 +27,13 @@
 
 @property (nonatomic,strong) TopTradeModel * trade;
 
+@property (nonatomic,strong) IBOutlet UITextField * infoText;
+
+-(IBAction)goNext:(id)sender;
+-(IBAction)goPrevious:(id)sender;
+-(IBAction)goSomeDay:(id)sender;
+
+-(IBAction)reCal:(id)sender;
+
 
 @end

@@ -20,7 +20,7 @@
 
 
 @synthesize infoView,tradeList;
-@synthesize startTime,endTime,trade;
+@synthesize startTime,endTime,trade,infoText;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,13 +38,14 @@
 	// Do any additional setup after loading the view.
     self.navigationItem.title = @"正在计算数据,请不要动......";
     self.infoView.scrollView.contentSize = CGSizeMake(703, 1280);
+    _tag = @"STAT_MONTH";
     isFirstLoad = YES;
     
     self.startTime = [DateHelper getFirstTimeOfMonth:[[NSDate alloc]initWithTimeIntervalSinceNow:(8*60*60)]];
     int dayCount = [DateHelper getDayCountOfMonth:self.startTime];
     self.endTime = [[NSDate alloc]initWithTimeInterval:(dayCount*24*60*60) sinceDate:self.startTime];
     
-    [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"ORDER_DAY"];
+    [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"STAT_MONTH"];
 
     if(report.length >10)
         [self.infoView loadHTMLString:report baseURL:[[NSURL alloc]initWithString: @"http://localhost/"]];
@@ -62,8 +63,57 @@
     return YES;
 }
 
+-(IBAction)goNext:(id)sender
+{
+    int count = 0;
+    if([_tag isEqualToString:@"STAT_MONTH"])
+    {
+        NSDate * refDate = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:self.endTime];
+        self.startTime = [DateHelper getFirstTimeOfMonth:refDate];
+        count = [DateHelper getDayCountOfMonth:self.startTime];
+        self.endTime = [[NSDate alloc]initWithTimeInterval:(count*24*60*60) sinceDate:self.startTime];
+    }
+    else if([_tag isEqualToString:@"STAT_YEAR"])    //TODO
+    {
+        /*
+         self.startTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.startTime];
+         self.endTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.endTime];
+         */
+    }
+    
+    [self configureView];
+}
 
+-(IBAction)goPrevious:(id)sender
+{
+    int count = 0;
+    if([_tag isEqualToString:@"STAT_MONTH"])
+    {
+        NSDate * refDate = [[NSDate alloc]initWithTimeInterval:-(24*60*60) sinceDate:self.startTime];
+        self.startTime = [DateHelper getFirstTimeOfMonth:refDate];
+        count = [DateHelper getDayCountOfMonth:self.startTime];
+        self.endTime = [[NSDate alloc]initWithTimeInterval:(count*24*60*60) sinceDate:self.startTime];
+    }
+    else if([_tag isEqualToString:@"STAT_YEAR"])    //TODO
+    {
+        /*
+         self.startTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.startTime];
+         self.endTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.endTime];
+         */
+    }
+    
+    [self configureView];
+}
 
+-(IBAction)goSomeDay:(id)sender
+{
+    
+}
+
+-(IBAction)reCal:(id)sender
+{
+    [self configureView];
+}
 
 #pragma mark - Managing the detail item
 
@@ -83,14 +133,14 @@
 {
     [self showWaiting];
     
-    self.navigationItem.title = @"正在计算数据,请不要动......";
+    self.infoText.text = @"正在计算数据,请不要动......";
     NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(calculate) object:nil];
     [thread start];
 }
 
 -(void)calFinished
 {
-    self.navigationItem.title = @"计算结束......";
+    self.infoText.text = @"计算结束......";
     [self.infoView loadHTMLString:report baseURL:[[NSURL alloc]initWithString: @"http://localhost/"]];
     [self hideWaiting];
 
