@@ -10,7 +10,7 @@
 
 @implementation AppDelegate
 
-@synthesize sessionController,topSession,mainController;
+@synthesize sessionController,topSession,mainController,editController;
 
 
 #pragma test delegate for taobao
@@ -61,6 +61,8 @@
     mainController = [rootController.storyboard instantiateViewControllerWithIdentifier:@"mainCtrl"];
     sessionController = [mainController.storyboard instantiateViewControllerWithIdentifier:@"sessionCtrl"];
     
+    editController = [rootController.storyboard instantiateViewControllerWithIdentifier:@"editCtrl"];
+
     return YES;}
 							
 - (void)applicationWillResignActive:(UIApplication *)application

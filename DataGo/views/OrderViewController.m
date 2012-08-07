@@ -529,16 +529,51 @@
     TopTradeModel * trade;
     TopOrderModel * order;
     self.obj = [self.dataList objectAtIndex:indexPath.row];
+
+    EditViewController * edit = (EditViewController * )[self getEditController];
+    edit.superController = self;
     if([self.obj isKindOfClass: [TopTradeModel class] ]) //if trade
     {        
         trade = [dataList objectAtIndex:indexPath.row];
+        edit.val = trade.service_fee;
+        edit.note = trade.note;
+        
+        [self.navigationController pushViewController:edit animated:YES];
     
     }
     else if ([self.obj isKindOfClass: [TopOrderModel class] ]) {
         order = [dataList objectAtIndex:indexPath.row];
+        edit.val = order.refund_num;
+        edit.note = @"REFUND-退货";
+        [self.navigationController pushViewController:edit animated:YES];
     }
 }
 
+-(void)finishedEdit:(UIViewController *)editCtrl
+{
+    EditViewController * edit = (EditViewController *)editCtrl;
+    
+    TopTradeModel * trade;
+    TopOrderModel * order;
+    if([self.obj isKindOfClass: [TopTradeModel class] ]) //if trade
+    {
+        trade = (TopTradeModel *)obj;
+        
+        trade.service_fee = edit.val;
+        trade.note = edit.textView.text;
+        [trade saveServiceFee];
+    }
+    else if ([self.obj isKindOfClass: [TopOrderModel class] ]) {
+        order = (TopOrderModel *) obj;
+        if(edit.val > order.num)
+            return;
+        
+        order.refund_num = edit.val;
+        [order saveRefundNum];
+    }
+    
+    [self configureView];
+}
 
 #pragma mark - View lifecycle
 

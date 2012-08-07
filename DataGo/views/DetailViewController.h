@@ -17,6 +17,10 @@
 
 -(NSString *) formatDouble:(double) val;
 
+-(UIViewController *) getEditController;
+
+
 -(void) showWaiting;
 -(void) hideWaiting;
+-(void) finishedEdit:(UIViewController *) editCtrl;
 @end

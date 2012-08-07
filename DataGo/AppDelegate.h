@@ -10,6 +10,7 @@
 
 #import "TopSessionController.h"
 #import "SplashViewController.h"
+#import "EditViewController.h"
 
 #import "TopData.h"
 
@@ -26,6 +27,8 @@
 @property(strong,nonatomic) TopSessionController * sessionController;
 
 @property(strong,nonatomic) UITabBarController * mainController;
+
+@property(strong,nonatomic) EditViewController * editController;
 
 @property(strong,nonatomic) NSString * topSession;
 

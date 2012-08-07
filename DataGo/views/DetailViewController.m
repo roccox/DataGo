@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Appdelegate.h"
 
 @implementation DetailViewController
 
@@ -23,6 +24,11 @@
 {
     NSString * str = [[NSString alloc]initWithFormat:@"%6.2f",val];
     return str;
+}
+
+-(void) finishedEdit:(UIViewController *) editCtrl
+{
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -75,6 +81,12 @@
 {
 }
 */
+
+-(UIViewController *) getEditController
+{
+    AppDelegate * delegate = [UIApplication sharedApplication].delegate;
+    return [delegate.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"editCtrl"];
+}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

@@ -65,6 +65,7 @@
 		DDB6FF7115D0ACF1001A7AC9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF7015D0ACF1001A7AC9 /* QuartzCore.framework */; };
 		DDB6FF7315D0AD02001A7AC9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF7215D0AD02001A7AC9 /* SystemConfiguration.framework */; };
 		DDB6FF7515D0AD21001A7AC9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF7415D0AD21001A7AC9 /* libsqlite3.0.dylib */; };
+		DDFD928D15D115E40053F466 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFD928C15D115E40053F466 /* EditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +177,8 @@
 		DDB6FF7015D0ACF1001A7AC9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DDB6FF7215D0AD02001A7AC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DDB6FF7415D0AD21001A7AC9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		DDFD928B15D115E40053F466 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		DDFD928C15D115E40053F466 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +304,8 @@
 		DDA27CA515D0B44700908084 /* utility */ = {
 			isa = PBXGroup;
 			children = (
+				DDFD928B15D115E40053F466 /* EditViewController.h */,
+				DDFD928C15D115E40053F466 /* EditViewController.m */,
 				DDA27CA615D0B44700908084 /* cell */,
 				DDA27CB315D0B44700908084 /* DateHelper.h */,
 				DDA27CB415D0B44700908084 /* DateHelper.m */,
@@ -518,6 +523,7 @@
 				DDA27CD715D0B44E00908084 /* SplashViewController.m in Sources */,
 				DDA27CD815D0B44E00908084 /* StatViewController.m in Sources */,
 				DDA27CD915D0B44E00908084 /* TopSessionController.m in Sources */,
+				DDFD928D15D115E40053F466 /* EditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
