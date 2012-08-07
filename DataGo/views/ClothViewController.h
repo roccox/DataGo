@@ -17,8 +17,12 @@
 @interface ClothViewController : DetailViewController <UITableViewDelegate,UITableViewDataSource,TaobaoDataDelegate>{
     
     NSString * _tag;
+    BOOL    isAllItemView;
 
 }
+
+@property (nonatomic,strong) IBOutlet UITextField * searchField;
+
 
 @property (nonatomic,strong) IBOutlet UITableView * tableView;
 
@@ -26,5 +30,10 @@
 @property (nonatomic,strong) NSMutableArray * itemList;
 
 @property (nonatomic,strong) TopItemModel * item;
+
+-(IBAction)showItems:(id)sender;
+-(IBAction)showSearchedItems:(id)sender;
+-(IBAction)refreshData:(id)sender;
+
 
 @end

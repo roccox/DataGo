@@ -14,7 +14,7 @@
 @end
 
 @implementation ClothViewController
-@synthesize dataList,tableView,item;
+@synthesize dataList,tableView,item,searchField;
 @synthesize itemList;
 
 #pragma mark - Managing the detail item
@@ -88,13 +88,13 @@
             [self.dataList addObject:_item];
         }
         
-        self.navigationItem.title = @"";
+        self.searchField.text = @"";
         [self hideWaiting];
         //relaod
         [self configureView];
     }
     else
-        self.navigationItem.title = tag;
+        self.searchField.text = tag;
 }
 
 -(void) notifyTradeRefresh:(BOOL)isFinished withTag:(NSString*) tag
@@ -161,7 +161,60 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    isAllItemView = true;
+    NSDate * startTime = [[NSDate alloc]initWithTimeIntervalSinceNow:8*60*60];
+    NSDate * endTime = [[NSDate alloc]initWithTimeInterval:(-7*24*60*60) sinceDate:startTime];
+    [self settingPeriodFrom:startTime to:endTime withTag:@"CLOTH"];
+}
+
+-(IBAction)showItems:(id)sender
+{
+    [self.dataList removeAllObjects];
+
+    if(isAllItemView)
+    {
+        isAllItemView = false;
+        self.navigationItem.leftBarButtonItem.title = @"全部商品";
+        for (TopItemModel * _item in self.itemList) {
+            if(_item.import_price < 0.01 && _item.import_price > -0.01)
+                [self.dataList addObject: _item];
+        }
+    }
+    else
+    {
+        isAllItemView = true;
+        self.navigationItem.leftBarButtonItem.title = @"无进价商品";
+        for (TopItemModel * _item in self.itemList) {
+            [self.dataList addObject: _item];
+        }
+    }
+
     [self configureView];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
+-(IBAction)showSearchedItems:(id)sender
+{
+    [self.dataList removeAllObjects];
+    for (TopItemModel * _item in self.itemList) {
+        NSRange range = [_item.title rangeOfString:self.searchField.text];
+        if(range.length > 0)
+            [self.dataList addObject: _item];
+    }
+    [self configureView];
+}
+
+-(IBAction)refreshData:(id)sender
+{
+    TopData * topData = [TopData getTopData];
+    topData.delegate = self;
+    self.searchField.text = @"更新中...";
+    [self showWaiting];
+    [topData refreshItems];
 }
 
 - (void)viewDidUnload
