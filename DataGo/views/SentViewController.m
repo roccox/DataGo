@@ -196,6 +196,13 @@
 //    [self configureView];
 }
 
+-(IBAction)updateView:(id)sender
+{
+    self.startTime = [[NSDate alloc]initWithTimeIntervalSinceNow:8*60*60];
+    self.endTime = [[NSDate alloc]initWithTimeInterval:(-7*24*60*60) sinceDate:self.startTime];
+    [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"DELIVERY"];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

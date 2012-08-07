@@ -29,4 +29,6 @@
 @property (nonatomic,strong) NSDate * startTime;
 @property (nonatomic,strong) NSDate * endTime;
 
+-(IBAction)updateView:(id)sender;
+
 @end
