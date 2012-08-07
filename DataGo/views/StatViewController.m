@@ -39,6 +39,13 @@
     self.navigationItem.title = @"正在计算数据,请不要动......";
     self.infoView.scrollView.contentSize = CGSizeMake(703, 1280);
     isFirstLoad = YES;
+    
+    self.startTime = [DateHelper getFirstTimeOfMonth:[[NSDate alloc]initWithTimeIntervalSinceNow:(8*60*60)]];
+    int dayCount = [DateHelper getDayCountOfMonth:self.startTime];
+    self.endTime = [[NSDate alloc]initWithTimeInterval:(dayCount*24*60*60) sinceDate:self.startTime];
+    
+    [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"ORDER_DAY"];
+
     if(report.length >10)
         [self.infoView loadHTMLString:report baseURL:[[NSURL alloc]initWithString: @"http://localhost/"]];
 }
