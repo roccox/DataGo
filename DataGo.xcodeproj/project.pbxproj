@@ -7,6 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDA27C4D15D0B42F00908084 /* AppConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C3E15D0B42F00908084 /* AppConstant.m */; };
+		DDA27C4E15D0B42F00908084 /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C4115D0B42F00908084 /* DataBase.m */; };
+		DDA27C4F15D0B42F00908084 /* TopData.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C4315D0B42F00908084 /* TopData.m */; };
+		DDA27C5015D0B42F00908084 /* TopItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C4515D0B42F00908084 /* TopItemModel.m */; };
+		DDA27C5115D0B42F00908084 /* TopOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C4715D0B42F00908084 /* TopOrderModel.m */; };
+		DDA27C5215D0B42F00908084 /* TopTradeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C4915D0B42F00908084 /* TopTradeModel.m */; };
+		DDA27C5315D0B42F00908084 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C4B15D0B42F00908084 /* Utility.m */; };
+		DDA27C5415D0B42F00908084 /* verydata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DDA27C4C15D0B42F00908084 /* verydata.sqlite */; };
+		DDA27C8D15D0B43E00908084 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA27C5715D0B43E00908084 /* DropboxSDK.framework */; };
+		DDA27C8E15D0B43E00908084 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C5A15D0B43E00908084 /* FMDatabase.m */; };
+		DDA27C8F15D0B43E00908084 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C5C15D0B43E00908084 /* FMDatabaseAdditions.m */; };
+		DDA27C9015D0B43E00908084 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C5E15D0B43E00908084 /* FMDatabasePool.m */; };
+		DDA27C9115D0B43E00908084 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6015D0B43E00908084 /* FMDatabaseQueue.m */; };
+		DDA27C9215D0B43E00908084 /* fmdb.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6115D0B43E00908084 /* fmdb.m */; };
+		DDA27C9315D0B43E00908084 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6315D0B43E00908084 /* FMResultSet.m */; };
+		DDA27C9415D0B43E00908084 /* Kal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DDA27C6515D0B43E00908084 /* Kal.bundle */; };
+		DDA27C9515D0B43E00908084 /* KalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6815D0B43E00908084 /* KalDataSource.m */; };
+		DDA27C9615D0B43E00908084 /* KalDate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6A15D0B43E00908084 /* KalDate.m */; };
+		DDA27C9715D0B43E00908084 /* KalGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6C15D0B43E00908084 /* KalGridView.m */; };
+		DDA27C9815D0B43E00908084 /* KalLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6E15D0B43E00908084 /* KalLogic.m */; };
+		DDA27C9915D0B43E00908084 /* KalMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7015D0B43E00908084 /* KalMonthView.m */; };
+		DDA27C9A15D0B43E00908084 /* KalTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7315D0B43E00908084 /* KalTileView.m */; };
+		DDA27C9B15D0B43E00908084 /* KalView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7515D0B43E00908084 /* KalView.m */; };
+		DDA27C9C15D0B43E00908084 /* KalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7715D0B43E00908084 /* KalViewController.m */; };
+		DDA27C9D15D0B43E00908084 /* NSDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7915D0B43E00908084 /* NSDateAdditions.m */; };
+		DDA27C9E15D0B43E00908084 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7B15D0B43E00908084 /* UIViewAdditions.m */; };
+		DDA27C9F15D0B43E00908084 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7E15D0B43E00908084 /* SDImageCache.m */; };
+		DDA27CA015D0B43E00908084 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8215D0B43E00908084 /* SDWebImageDecoder.m */; };
+		DDA27CA115D0B43E00908084 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8415D0B43E00908084 /* SDWebImageDownloader.m */; };
+		DDA27CA215D0B43E00908084 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8715D0B43E00908084 /* SDWebImageManager.m */; };
+		DDA27CA315D0B43E00908084 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8A15D0B43E00908084 /* SDWebImagePrefetcher.m */; };
+		DDA27CA415D0B43E00908084 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8C15D0B43E00908084 /* UIImageView+WebCache.m */; };
+		DDA27CB515D0B44700908084 /* EditController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CA815D0B44700908084 /* EditController.m */; };
+		DDA27CB615D0B44700908084 /* EditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA27CA915D0B44700908084 /* EditController.xib */; };
+		DDA27CB715D0B44700908084 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CAB15D0B44700908084 /* ItemCell.m */; };
+		DDA27CB815D0B44700908084 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA27CAC15D0B44700908084 /* ItemCell.xib */; };
+		DDA27CB915D0B44700908084 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CAE15D0B44700908084 /* OrderCell.m */; };
+		DDA27CBA15D0B44700908084 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA27CAF15D0B44700908084 /* OrderCell.xib */; };
+		DDA27CBB15D0B44700908084 /* TradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CB115D0B44700908084 /* TradeCell.m */; };
+		DDA27CBC15D0B44700908084 /* TradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA27CB215D0B44700908084 /* TradeCell.xib */; };
+		DDA27CBD15D0B44700908084 /* DateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CB415D0B44700908084 /* DateHelper.m */; };
+		DDA27CD115D0B44E00908084 /* ClothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC015D0B44E00908084 /* ClothViewController.m */; };
+		DDA27CD215D0B44E00908084 /* DateSelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC215D0B44E00908084 /* DateSelController.m */; };
+		DDA27CD315D0B44E00908084 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC415D0B44E00908084 /* DetailViewController.m */; };
+		DDA27CD415D0B44E00908084 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC615D0B44E00908084 /* MasterViewController.m */; };
+		DDA27CD515D0B44E00908084 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC815D0B44E00908084 /* OrderViewController.m */; };
+		DDA27CD615D0B44E00908084 /* SentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CCA15D0B44E00908084 /* SentViewController.m */; };
+		DDA27CD715D0B44E00908084 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CCC15D0B44E00908084 /* SplashViewController.m */; };
+		DDA27CD815D0B44E00908084 /* StatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CCE15D0B44E00908084 /* StatViewController.m */; };
+		DDA27CD915D0B44E00908084 /* TopSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CD015D0B44E00908084 /* TopSessionController.m */; };
 		DDB6FF4515D0AB1C001A7AC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF4415D0AB1C001A7AC9 /* UIKit.framework */; };
 		DDB6FF4715D0AB1C001A7AC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF4615D0AB1C001A7AC9 /* Foundation.framework */; };
 		DDB6FF4915D0AB1C001A7AC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF4815D0AB1C001A7AC9 /* CoreGraphics.framework */; };
@@ -20,9 +70,111 @@
 		DDB6FF6215D0AB1C001A7AC9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6FF6115D0AB1C001A7AC9 /* SecondViewController.m */; };
 		DDB6FF6415D0AB1C001A7AC9 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB6FF6315D0AB1C001A7AC9 /* second.png */; };
 		DDB6FF6615D0AB1C001A7AC9 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB6FF6515D0AB1C001A7AC9 /* second@2x.png */; };
+		DDB6FF7115D0ACF1001A7AC9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF7015D0ACF1001A7AC9 /* QuartzCore.framework */; };
+		DDB6FF7315D0AD02001A7AC9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF7215D0AD02001A7AC9 /* SystemConfiguration.framework */; };
+		DDB6FF7515D0AD21001A7AC9 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF7415D0AD21001A7AC9 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DDA27C3D15D0B42F00908084 /* AppConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
+		DDA27C3E15D0B42F00908084 /* AppConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConstant.m; sourceTree = "<group>"; };
+		DDA27C3F15D0B42F00908084 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		DDA27C4015D0B42F00908084 /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
+		DDA27C4115D0B42F00908084 /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
+		DDA27C4215D0B42F00908084 /* TopData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopData.h; sourceTree = "<group>"; };
+		DDA27C4315D0B42F00908084 /* TopData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopData.m; sourceTree = "<group>"; };
+		DDA27C4415D0B42F00908084 /* TopItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopItemModel.h; sourceTree = "<group>"; };
+		DDA27C4515D0B42F00908084 /* TopItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopItemModel.m; sourceTree = "<group>"; };
+		DDA27C4615D0B42F00908084 /* TopOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopOrderModel.h; sourceTree = "<group>"; };
+		DDA27C4715D0B42F00908084 /* TopOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopOrderModel.m; sourceTree = "<group>"; };
+		DDA27C4815D0B42F00908084 /* TopTradeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTradeModel.h; sourceTree = "<group>"; };
+		DDA27C4915D0B42F00908084 /* TopTradeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTradeModel.m; sourceTree = "<group>"; };
+		DDA27C4A15D0B42F00908084 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		DDA27C4B15D0B42F00908084 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		DDA27C4C15D0B42F00908084 /* verydata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = verydata.sqlite; sourceTree = "<group>"; };
+		DDA27C5715D0B43E00908084 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		DDA27C5915D0B43E00908084 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		DDA27C5A15D0B43E00908084 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		DDA27C5B15D0B43E00908084 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		DDA27C5C15D0B43E00908084 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		DDA27C5D15D0B43E00908084 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		DDA27C5E15D0B43E00908084 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		DDA27C5F15D0B43E00908084 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		DDA27C6015D0B43E00908084 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		DDA27C6115D0B43E00908084 /* fmdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fmdb.m; sourceTree = "<group>"; };
+		DDA27C6215D0B43E00908084 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		DDA27C6315D0B43E00908084 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		DDA27C6515D0B43E00908084 /* Kal.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Kal.bundle; sourceTree = "<group>"; };
+		DDA27C6615D0B43E00908084 /* Kal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kal.h; sourceTree = "<group>"; };
+		DDA27C6715D0B43E00908084 /* KalDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalDataSource.h; sourceTree = "<group>"; };
+		DDA27C6815D0B43E00908084 /* KalDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalDataSource.m; sourceTree = "<group>"; };
+		DDA27C6915D0B43E00908084 /* KalDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalDate.h; sourceTree = "<group>"; };
+		DDA27C6A15D0B43E00908084 /* KalDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalDate.m; sourceTree = "<group>"; };
+		DDA27C6B15D0B43E00908084 /* KalGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalGridView.h; sourceTree = "<group>"; };
+		DDA27C6C15D0B43E00908084 /* KalGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalGridView.m; sourceTree = "<group>"; };
+		DDA27C6D15D0B43E00908084 /* KalLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalLogic.h; sourceTree = "<group>"; };
+		DDA27C6E15D0B43E00908084 /* KalLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalLogic.m; sourceTree = "<group>"; };
+		DDA27C6F15D0B43E00908084 /* KalMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalMonthView.h; sourceTree = "<group>"; };
+		DDA27C7015D0B43E00908084 /* KalMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalMonthView.m; sourceTree = "<group>"; };
+		DDA27C7115D0B43E00908084 /* KalPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalPrivate.h; sourceTree = "<group>"; };
+		DDA27C7215D0B43E00908084 /* KalTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalTileView.h; sourceTree = "<group>"; };
+		DDA27C7315D0B43E00908084 /* KalTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalTileView.m; sourceTree = "<group>"; };
+		DDA27C7415D0B43E00908084 /* KalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalView.h; sourceTree = "<group>"; };
+		DDA27C7515D0B43E00908084 /* KalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalView.m; sourceTree = "<group>"; };
+		DDA27C7615D0B43E00908084 /* KalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalViewController.h; sourceTree = "<group>"; };
+		DDA27C7715D0B43E00908084 /* KalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalViewController.m; sourceTree = "<group>"; };
+		DDA27C7815D0B43E00908084 /* NSDateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateAdditions.h; sourceTree = "<group>"; };
+		DDA27C7915D0B43E00908084 /* NSDateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateAdditions.m; sourceTree = "<group>"; };
+		DDA27C7A15D0B43E00908084 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		DDA27C7B15D0B43E00908084 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		DDA27C7D15D0B43E00908084 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		DDA27C7E15D0B43E00908084 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		DDA27C7F15D0B43E00908084 /* SDImageCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCacheDelegate.h; sourceTree = "<group>"; };
+		DDA27C8015D0B43E00908084 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		DDA27C8115D0B43E00908084 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		DDA27C8215D0B43E00908084 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		DDA27C8315D0B43E00908084 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		DDA27C8415D0B43E00908084 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		DDA27C8515D0B43E00908084 /* SDWebImageDownloaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderDelegate.h; sourceTree = "<group>"; };
+		DDA27C8615D0B43E00908084 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		DDA27C8715D0B43E00908084 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		DDA27C8815D0B43E00908084 /* SDWebImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManagerDelegate.h; sourceTree = "<group>"; };
+		DDA27C8915D0B43E00908084 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		DDA27C8A15D0B43E00908084 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		DDA27C8B15D0B43E00908084 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		DDA27C8C15D0B43E00908084 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		DDA27CA715D0B44700908084 /* EditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditController.h; sourceTree = "<group>"; };
+		DDA27CA815D0B44700908084 /* EditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditController.m; sourceTree = "<group>"; };
+		DDA27CA915D0B44700908084 /* EditController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditController.xib; sourceTree = "<group>"; };
+		DDA27CAA15D0B44700908084 /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		DDA27CAB15D0B44700908084 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		DDA27CAC15D0B44700908084 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		DDA27CAD15D0B44700908084 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		DDA27CAE15D0B44700908084 /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		DDA27CAF15D0B44700908084 /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		DDA27CB015D0B44700908084 /* TradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeCell.h; sourceTree = "<group>"; };
+		DDA27CB115D0B44700908084 /* TradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeCell.m; sourceTree = "<group>"; };
+		DDA27CB215D0B44700908084 /* TradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradeCell.xib; sourceTree = "<group>"; };
+		DDA27CB315D0B44700908084 /* DateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateHelper.h; sourceTree = "<group>"; };
+		DDA27CB415D0B44700908084 /* DateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateHelper.m; sourceTree = "<group>"; };
+		DDA27CBF15D0B44E00908084 /* ClothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClothViewController.h; sourceTree = "<group>"; };
+		DDA27CC015D0B44E00908084 /* ClothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothViewController.m; sourceTree = "<group>"; };
+		DDA27CC115D0B44E00908084 /* DateSelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateSelController.h; sourceTree = "<group>"; };
+		DDA27CC215D0B44E00908084 /* DateSelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSelController.m; sourceTree = "<group>"; };
+		DDA27CC315D0B44E00908084 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		DDA27CC415D0B44E00908084 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		DDA27CC515D0B44E00908084 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		DDA27CC615D0B44E00908084 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		DDA27CC715D0B44E00908084 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		DDA27CC815D0B44E00908084 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		DDA27CC915D0B44E00908084 /* SentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentViewController.h; sourceTree = "<group>"; };
+		DDA27CCA15D0B44E00908084 /* SentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentViewController.m; sourceTree = "<group>"; };
+		DDA27CCB15D0B44E00908084 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		DDA27CCC15D0B44E00908084 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		DDA27CCD15D0B44E00908084 /* StatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatViewController.h; sourceTree = "<group>"; };
+		DDA27CCE15D0B44E00908084 /* StatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatViewController.m; sourceTree = "<group>"; };
+		DDA27CCF15D0B44E00908084 /* TopSessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopSessionController.h; sourceTree = "<group>"; };
+		DDA27CD015D0B44E00908084 /* TopSessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopSessionController.m; sourceTree = "<group>"; };
 		DDB6FF4015D0AB1C001A7AC9 /* DataGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB6FF4415D0AB1C001A7AC9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDB6FF4615D0AB1C001A7AC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,6 +194,9 @@
 		DDB6FF6115D0AB1C001A7AC9 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		DDB6FF6315D0AB1C001A7AC9 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		DDB6FF6515D0AB1C001A7AC9 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		DDB6FF7015D0ACF1001A7AC9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DDB6FF7215D0AD02001A7AC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DDB6FF7415D0AD21001A7AC9 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,15 +204,178 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB6FF7515D0AD21001A7AC9 /* libsqlite3.0.dylib in Frameworks */,
+				DDB6FF7315D0AD02001A7AC9 /* SystemConfiguration.framework in Frameworks */,
+				DDB6FF7115D0ACF1001A7AC9 /* QuartzCore.framework in Frameworks */,
 				DDB6FF4515D0AB1C001A7AC9 /* UIKit.framework in Frameworks */,
 				DDB6FF4715D0AB1C001A7AC9 /* Foundation.framework in Frameworks */,
 				DDB6FF4915D0AB1C001A7AC9 /* CoreGraphics.framework in Frameworks */,
+				DDA27C8D15D0B43E00908084 /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DDA27C3C15D0B42F00908084 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				DDA27C3D15D0B42F00908084 /* AppConstant.h */,
+				DDA27C3E15D0B42F00908084 /* AppConstant.m */,
+				DDA27C3F15D0B42F00908084 /* Constants.h */,
+				DDA27C4015D0B42F00908084 /* DataBase.h */,
+				DDA27C4115D0B42F00908084 /* DataBase.m */,
+				DDA27C4215D0B42F00908084 /* TopData.h */,
+				DDA27C4315D0B42F00908084 /* TopData.m */,
+				DDA27C4415D0B42F00908084 /* TopItemModel.h */,
+				DDA27C4515D0B42F00908084 /* TopItemModel.m */,
+				DDA27C4615D0B42F00908084 /* TopOrderModel.h */,
+				DDA27C4715D0B42F00908084 /* TopOrderModel.m */,
+				DDA27C4815D0B42F00908084 /* TopTradeModel.h */,
+				DDA27C4915D0B42F00908084 /* TopTradeModel.m */,
+				DDA27C4A15D0B42F00908084 /* Utility.h */,
+				DDA27C4B15D0B42F00908084 /* Utility.m */,
+				DDA27C4C15D0B42F00908084 /* verydata.sqlite */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		DDA27C5615D0B43E00908084 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DDA27C5715D0B43E00908084 /* DropboxSDK.framework */,
+				DDA27C5815D0B43E00908084 /* fmdb */,
+				DDA27C6415D0B43E00908084 /* kal */,
+				DDA27C7C15D0B43E00908084 /* SDWebImage */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		DDA27C5815D0B43E00908084 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				DDA27C5915D0B43E00908084 /* FMDatabase.h */,
+				DDA27C5A15D0B43E00908084 /* FMDatabase.m */,
+				DDA27C5B15D0B43E00908084 /* FMDatabaseAdditions.h */,
+				DDA27C5C15D0B43E00908084 /* FMDatabaseAdditions.m */,
+				DDA27C5D15D0B43E00908084 /* FMDatabasePool.h */,
+				DDA27C5E15D0B43E00908084 /* FMDatabasePool.m */,
+				DDA27C5F15D0B43E00908084 /* FMDatabaseQueue.h */,
+				DDA27C6015D0B43E00908084 /* FMDatabaseQueue.m */,
+				DDA27C6115D0B43E00908084 /* fmdb.m */,
+				DDA27C6215D0B43E00908084 /* FMResultSet.h */,
+				DDA27C6315D0B43E00908084 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		DDA27C6415D0B43E00908084 /* kal */ = {
+			isa = PBXGroup;
+			children = (
+				DDA27C6515D0B43E00908084 /* Kal.bundle */,
+				DDA27C6615D0B43E00908084 /* Kal.h */,
+				DDA27C6715D0B43E00908084 /* KalDataSource.h */,
+				DDA27C6815D0B43E00908084 /* KalDataSource.m */,
+				DDA27C6915D0B43E00908084 /* KalDate.h */,
+				DDA27C6A15D0B43E00908084 /* KalDate.m */,
+				DDA27C6B15D0B43E00908084 /* KalGridView.h */,
+				DDA27C6C15D0B43E00908084 /* KalGridView.m */,
+				DDA27C6D15D0B43E00908084 /* KalLogic.h */,
+				DDA27C6E15D0B43E00908084 /* KalLogic.m */,
+				DDA27C6F15D0B43E00908084 /* KalMonthView.h */,
+				DDA27C7015D0B43E00908084 /* KalMonthView.m */,
+				DDA27C7115D0B43E00908084 /* KalPrivate.h */,
+				DDA27C7215D0B43E00908084 /* KalTileView.h */,
+				DDA27C7315D0B43E00908084 /* KalTileView.m */,
+				DDA27C7415D0B43E00908084 /* KalView.h */,
+				DDA27C7515D0B43E00908084 /* KalView.m */,
+				DDA27C7615D0B43E00908084 /* KalViewController.h */,
+				DDA27C7715D0B43E00908084 /* KalViewController.m */,
+				DDA27C7815D0B43E00908084 /* NSDateAdditions.h */,
+				DDA27C7915D0B43E00908084 /* NSDateAdditions.m */,
+				DDA27C7A15D0B43E00908084 /* UIViewAdditions.h */,
+				DDA27C7B15D0B43E00908084 /* UIViewAdditions.m */,
+			);
+			path = kal;
+			sourceTree = "<group>";
+		};
+		DDA27C7C15D0B43E00908084 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				DDA27C7D15D0B43E00908084 /* SDImageCache.h */,
+				DDA27C7E15D0B43E00908084 /* SDImageCache.m */,
+				DDA27C7F15D0B43E00908084 /* SDImageCacheDelegate.h */,
+				DDA27C8015D0B43E00908084 /* SDWebImageCompat.h */,
+				DDA27C8115D0B43E00908084 /* SDWebImageDecoder.h */,
+				DDA27C8215D0B43E00908084 /* SDWebImageDecoder.m */,
+				DDA27C8315D0B43E00908084 /* SDWebImageDownloader.h */,
+				DDA27C8415D0B43E00908084 /* SDWebImageDownloader.m */,
+				DDA27C8515D0B43E00908084 /* SDWebImageDownloaderDelegate.h */,
+				DDA27C8615D0B43E00908084 /* SDWebImageManager.h */,
+				DDA27C8715D0B43E00908084 /* SDWebImageManager.m */,
+				DDA27C8815D0B43E00908084 /* SDWebImageManagerDelegate.h */,
+				DDA27C8915D0B43E00908084 /* SDWebImagePrefetcher.h */,
+				DDA27C8A15D0B43E00908084 /* SDWebImagePrefetcher.m */,
+				DDA27C8B15D0B43E00908084 /* UIImageView+WebCache.h */,
+				DDA27C8C15D0B43E00908084 /* UIImageView+WebCache.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		DDA27CA515D0B44700908084 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				DDA27CA615D0B44700908084 /* cell */,
+				DDA27CB315D0B44700908084 /* DateHelper.h */,
+				DDA27CB415D0B44700908084 /* DateHelper.m */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		DDA27CA615D0B44700908084 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				DDA27CA715D0B44700908084 /* EditController.h */,
+				DDA27CA815D0B44700908084 /* EditController.m */,
+				DDA27CA915D0B44700908084 /* EditController.xib */,
+				DDA27CAA15D0B44700908084 /* ItemCell.h */,
+				DDA27CAB15D0B44700908084 /* ItemCell.m */,
+				DDA27CAC15D0B44700908084 /* ItemCell.xib */,
+				DDA27CAD15D0B44700908084 /* OrderCell.h */,
+				DDA27CAE15D0B44700908084 /* OrderCell.m */,
+				DDA27CAF15D0B44700908084 /* OrderCell.xib */,
+				DDA27CB015D0B44700908084 /* TradeCell.h */,
+				DDA27CB115D0B44700908084 /* TradeCell.m */,
+				DDA27CB215D0B44700908084 /* TradeCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		DDA27CBE15D0B44E00908084 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				DDA27CBF15D0B44E00908084 /* ClothViewController.h */,
+				DDA27CC015D0B44E00908084 /* ClothViewController.m */,
+				DDA27CC115D0B44E00908084 /* DateSelController.h */,
+				DDA27CC215D0B44E00908084 /* DateSelController.m */,
+				DDA27CC315D0B44E00908084 /* DetailViewController.h */,
+				DDA27CC415D0B44E00908084 /* DetailViewController.m */,
+				DDA27CC515D0B44E00908084 /* MasterViewController.h */,
+				DDA27CC615D0B44E00908084 /* MasterViewController.m */,
+				DDA27CC715D0B44E00908084 /* OrderViewController.h */,
+				DDA27CC815D0B44E00908084 /* OrderViewController.m */,
+				DDA27CC915D0B44E00908084 /* SentViewController.h */,
+				DDA27CCA15D0B44E00908084 /* SentViewController.m */,
+				DDA27CCB15D0B44E00908084 /* SplashViewController.h */,
+				DDA27CCC15D0B44E00908084 /* SplashViewController.m */,
+				DDA27CCD15D0B44E00908084 /* StatViewController.h */,
+				DDA27CCE15D0B44E00908084 /* StatViewController.m */,
+				DDA27CCF15D0B44E00908084 /* TopSessionController.h */,
+				DDA27CD015D0B44E00908084 /* TopSessionController.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		DDB6FF3515D0AB1C001A7AC9 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +396,9 @@
 		DDB6FF4315D0AB1C001A7AC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDB6FF7415D0AD21001A7AC9 /* libsqlite3.0.dylib */,
+				DDB6FF7215D0AD02001A7AC9 /* SystemConfiguration.framework */,
+				DDB6FF7015D0ACF1001A7AC9 /* QuartzCore.framework */,
 				DDB6FF4415D0AB1C001A7AC9 /* UIKit.framework */,
 				DDB6FF4615D0AB1C001A7AC9 /* Foundation.framework */,
 				DDB6FF4815D0AB1C001A7AC9 /* CoreGraphics.framework */,
@@ -88,6 +409,10 @@
 		DDB6FF4A15D0AB1C001A7AC9 /* DataGo */ = {
 			isa = PBXGroup;
 			children = (
+				DDA27CBE15D0B44E00908084 /* views */,
+				DDA27CA515D0B44700908084 /* utility */,
+				DDA27C5615D0B43E00908084 /* lib */,
+				DDA27C3C15D0B42F00908084 /* data */,
 				DDB6FF5315D0AB1C001A7AC9 /* AppDelegate.h */,
 				DDB6FF5415D0AB1C001A7AC9 /* AppDelegate.m */,
 				DDB6FF5615D0AB1C001A7AC9 /* MainStoryboard.storyboard */,
@@ -172,6 +497,12 @@
 				DDB6FF5F15D0AB1C001A7AC9 /* first@2x.png in Resources */,
 				DDB6FF6415D0AB1C001A7AC9 /* second.png in Resources */,
 				DDB6FF6615D0AB1C001A7AC9 /* second@2x.png in Resources */,
+				DDA27C5415D0B42F00908084 /* verydata.sqlite in Resources */,
+				DDA27C9415D0B43E00908084 /* Kal.bundle in Resources */,
+				DDA27CB615D0B44700908084 /* EditController.xib in Resources */,
+				DDA27CB815D0B44700908084 /* ItemCell.xib in Resources */,
+				DDA27CBA15D0B44700908084 /* OrderCell.xib in Resources */,
+				DDA27CBC15D0B44700908084 /* TradeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +517,49 @@
 				DDB6FF5515D0AB1C001A7AC9 /* AppDelegate.m in Sources */,
 				DDB6FF5B15D0AB1C001A7AC9 /* FirstViewController.m in Sources */,
 				DDB6FF6215D0AB1C001A7AC9 /* SecondViewController.m in Sources */,
+				DDA27C4D15D0B42F00908084 /* AppConstant.m in Sources */,
+				DDA27C4E15D0B42F00908084 /* DataBase.m in Sources */,
+				DDA27C4F15D0B42F00908084 /* TopData.m in Sources */,
+				DDA27C5015D0B42F00908084 /* TopItemModel.m in Sources */,
+				DDA27C5115D0B42F00908084 /* TopOrderModel.m in Sources */,
+				DDA27C5215D0B42F00908084 /* TopTradeModel.m in Sources */,
+				DDA27C5315D0B42F00908084 /* Utility.m in Sources */,
+				DDA27C8E15D0B43E00908084 /* FMDatabase.m in Sources */,
+				DDA27C8F15D0B43E00908084 /* FMDatabaseAdditions.m in Sources */,
+				DDA27C9015D0B43E00908084 /* FMDatabasePool.m in Sources */,
+				DDA27C9115D0B43E00908084 /* FMDatabaseQueue.m in Sources */,
+				DDA27C9215D0B43E00908084 /* fmdb.m in Sources */,
+				DDA27C9315D0B43E00908084 /* FMResultSet.m in Sources */,
+				DDA27C9515D0B43E00908084 /* KalDataSource.m in Sources */,
+				DDA27C9615D0B43E00908084 /* KalDate.m in Sources */,
+				DDA27C9715D0B43E00908084 /* KalGridView.m in Sources */,
+				DDA27C9815D0B43E00908084 /* KalLogic.m in Sources */,
+				DDA27C9915D0B43E00908084 /* KalMonthView.m in Sources */,
+				DDA27C9A15D0B43E00908084 /* KalTileView.m in Sources */,
+				DDA27C9B15D0B43E00908084 /* KalView.m in Sources */,
+				DDA27C9C15D0B43E00908084 /* KalViewController.m in Sources */,
+				DDA27C9D15D0B43E00908084 /* NSDateAdditions.m in Sources */,
+				DDA27C9E15D0B43E00908084 /* UIViewAdditions.m in Sources */,
+				DDA27C9F15D0B43E00908084 /* SDImageCache.m in Sources */,
+				DDA27CA015D0B43E00908084 /* SDWebImageDecoder.m in Sources */,
+				DDA27CA115D0B43E00908084 /* SDWebImageDownloader.m in Sources */,
+				DDA27CA215D0B43E00908084 /* SDWebImageManager.m in Sources */,
+				DDA27CA315D0B43E00908084 /* SDWebImagePrefetcher.m in Sources */,
+				DDA27CA415D0B43E00908084 /* UIImageView+WebCache.m in Sources */,
+				DDA27CB515D0B44700908084 /* EditController.m in Sources */,
+				DDA27CB715D0B44700908084 /* ItemCell.m in Sources */,
+				DDA27CB915D0B44700908084 /* OrderCell.m in Sources */,
+				DDA27CBB15D0B44700908084 /* TradeCell.m in Sources */,
+				DDA27CBD15D0B44700908084 /* DateHelper.m in Sources */,
+				DDA27CD115D0B44E00908084 /* ClothViewController.m in Sources */,
+				DDA27CD215D0B44E00908084 /* DateSelController.m in Sources */,
+				DDA27CD315D0B44E00908084 /* DetailViewController.m in Sources */,
+				DDA27CD415D0B44E00908084 /* MasterViewController.m in Sources */,
+				DDA27CD515D0B44E00908084 /* OrderViewController.m in Sources */,
+				DDA27CD615D0B44E00908084 /* SentViewController.m in Sources */,
+				DDA27CD715D0B44E00908084 /* SplashViewController.m in Sources */,
+				DDA27CD815D0B44E00908084 /* StatViewController.m in Sources */,
+				DDA27CD915D0B44E00908084 /* TopSessionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +607,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -253,7 +627,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -263,9 +637,14 @@
 		DDB6FF6A15D0AB1C001A7AC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/DataGo/lib\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataGo/DataGo-Prefix.pch";
 				INFOPLIST_FILE = "DataGo/DataGo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -274,9 +653,14 @@
 		DDB6FF6B15D0AB1C001A7AC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/DataGo/lib\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataGo/DataGo-Prefix.pch";
 				INFOPLIST_FILE = "DataGo/DataGo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -301,6 +685,7 @@
 				DDB6FF6B15D0AB1C001A7AC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
