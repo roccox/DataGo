@@ -189,6 +189,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.startTime = [[NSDate alloc]initWithTimeIntervalSinceNow:8*60*60];
+    self.endTime = [[NSDate alloc]initWithTimeInterval:(-7*24*60*60) sinceDate:self.startTime];
+    [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"ORDER_DAY"];
+
 //    [self configureView];
 }
 
