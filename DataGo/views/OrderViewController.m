@@ -16,7 +16,7 @@
 
 @implementation OrderViewController
 
-@synthesize tableView,infoView,dataList,tradeList;
+@synthesize tableView,infoView,dataList,tradeList,toolView;
 @synthesize startTime,endTime,obj;
 
 #pragma mark - Managing the detail item
@@ -186,11 +186,12 @@
         self.tableView.frame = frame;
     }
     
+    [self.toolView removeFromSuperview];
     
     [self.infoView loadHTMLString:report baseURL:[[NSURL alloc]initWithString: @"http://localhost/"]];
     // Update the user interface for the detail item.
-    [self.tableView reloadData];
-//    [self allTrades:self];
+//    [self.tableView reloadData];
+    [self allTrades:self];
 
 }
 
@@ -200,7 +201,15 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
--(void)updateData:(id)sender
+-(IBAction)showHideTools:(id)sender
+{
+    if([self.toolView superview] == NULL)
+        [self.rootView addSubview:self.toolView];
+    else
+        [self.toolView removeFromSuperview];
+}
+
+-(IBAction)updateData:(id)sender
 {
     TopData * topData = [TopData getTopData];
     topData.delegate = self;
@@ -239,6 +248,121 @@
     }
     
 }
+
+
+-(IBAction)allTrades:(id)sender
+{
+    int tradeCount = 0;
+    int itemCount = 0;
+    [self.dataList removeAllObjects];
+    
+    for (TopTradeModel * _trade in tradeList) {
+        [self.dataList addObject:_trade];
+        tradeCount++;
+        
+        for(TopOrderModel * order in _trade.orders){
+            [self.dataList addObject:order];
+            itemCount += order.num;
+        }
+    }
+    
+    [self.tableView reloadData];
+    self.navigationItem.title = [[NSString alloc]initWithFormat:@"全:%d单%d件",tradeCount,itemCount];
+}
+
+-(IBAction)notPayTrades:(id)sender
+{
+    int tradeCount = 0;
+    int itemCount = 0;
+    double notPaySale = 0;
+    [self.dataList removeAllObjects];
+    
+    for (TopTradeModel * _trade in tradeList) {
+        if([_trade.status isEqualToString:@"WAIT_BUYER_PAY"])
+        {
+            [self.dataList addObject:_trade];
+            tradeCount++;
+            for(TopOrderModel * order in _trade.orders){
+                [self.dataList addObject:order];
+                itemCount += order.num;
+                notPaySale += order.total_fee;
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+    self.navigationItem.title = [[NSString alloc]initWithFormat:@"未:%d单%d件%4.2f元",tradeCount,itemCount,notPaySale];
+}
+
+-(IBAction)payTrades:(id)sender
+{
+    int tradeCount = 0;
+    int itemCount = 0;
+    [self.dataList removeAllObjects];
+    
+    for (TopTradeModel * _trade in tradeList) {
+        if([_trade.status isEqualToString:@"WAIT_SELLER_SEND_GOODS"])
+        {
+            [self.dataList addObject:_trade];
+            tradeCount++;
+            
+            for(TopOrderModel * order in _trade.orders){
+                [self.dataList addObject:order];
+                itemCount += order.num;
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+    self.navigationItem.title = [[NSString alloc]initWithFormat:@"卖:%d单%d件",tradeCount,itemCount];
+}
+
+-(IBAction)sentTrades:(id)sender
+{
+    int tradeCount = 0;
+    int itemCount = 0;
+    [self.dataList removeAllObjects];
+    
+    for (TopTradeModel * _trade in tradeList) {
+        if([_trade.status isEqualToString:@"WAIT_BUYER_CONFIRM_GOODS"])
+        {
+            [self.dataList addObject:_trade];
+            tradeCount++;
+            
+            for(TopOrderModel * order in _trade.orders){
+                [self.dataList addObject:order];
+                itemCount += order.num;
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+    self.navigationItem.title = [[NSString alloc]initWithFormat:@"发:%d单%d件",tradeCount,itemCount];
+}
+-(IBAction)closedTrades:(id)sender
+{
+    int tradeCount = 0;
+    int itemCount = 0;
+    [self.dataList removeAllObjects];
+    
+    for (TopTradeModel * _trade in tradeList) {
+        if([_trade.status isEqualToString:@"TRADE_CLOSED_BY_TAOBAO"] ||
+           [_trade.status isEqualToString:@"TRADE_CLOSED"])
+        {
+            [self.dataList addObject:_trade];
+            tradeCount++;
+            
+            for(TopOrderModel * order in _trade.orders){
+                [self.dataList addObject:order];
+                itemCount += order.num;
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+    self.navigationItem.title = [[NSString alloc]initWithFormat:@"关:%d单%d件",tradeCount,itemCount];
+}
+
 
 #pragma mark - table view
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

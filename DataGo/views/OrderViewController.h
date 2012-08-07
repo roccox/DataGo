@@ -36,10 +36,21 @@
 @property (nonatomic,strong) NSMutableArray * dataList;
 @property (nonatomic,strong) NSMutableArray * tradeList;
 
+@property (nonatomic,strong) IBOutlet UIView * toolView;
+@property (nonatomic,strong) IBOutlet UIView * rootView;
+
 @property (nonatomic,strong) id obj;
 
+-(IBAction)showHideTools:(id)sender;
 
--(void)updateData:(id)sender;
+-(IBAction)updateData:(id)sender;
+
+-(IBAction)allTrades:(id)sender;
+-(IBAction)notPayTrades:(id)sender;
+-(IBAction)payTrades:(id)sender;
+-(IBAction)sentTrades:(id)sender;
+-(IBAction)closedTrades:(id)sender;
+
 
 -(void)getData;
 -(void)calculate;
