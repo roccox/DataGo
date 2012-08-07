@@ -19,12 +19,6 @@
 @synthesize tableView,infoView,dataList,tradeList;
 @synthesize startTime,endTime,obj;
 
-@synthesize nextBtn,infoLabel,searchBtn;
-
-@synthesize calPopController;
-
-@synthesize masterPopoverController = _masterPopoverController;
-
 #pragma mark - Managing the detail item
 
 -(void)settingPeriodFrom: (NSDate *)start to:(NSDate *) end withTag:(NSString *)tag
@@ -38,9 +32,6 @@
         [self getData];
     }
     
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
     //put data to view
 }
 
@@ -196,18 +187,10 @@
     }
     
     
-    if ([self.endTime timeIntervalSince1970] > [[[NSDate alloc]initWithTimeIntervalSinceNow:(8*60*60)] timeIntervalSince1970]) {
-        self.nextBtn.enabled = NO;
-    }
-    else {
-        self.nextBtn.enabled = YES;
-    }
-
-
     [self.infoView loadHTMLString:report baseURL:[[NSURL alloc]initWithString: @"http://localhost/"]];
     // Update the user interface for the detail item.
-//    [self.tableView reloadData];
-    [self allTrades:self];
+    [self.tableView reloadData];
+//    [self allTrades:self];
 
 }
 
@@ -217,11 +200,11 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
--(IBAction)updateData:(id)sender
+-(void)updateData:(id)sender
 {
     TopData * topData = [TopData getTopData];
     topData.delegate = self;
-    self.infoLabel.text = @"更新中......";
+    self.navigationItem.title = @"更新中......";
     [self showWaiting];
     [topData refreshTrades];
 }
@@ -237,7 +220,7 @@
     if(isFinished)
     {
         NSString * str = _tag;
-        self.infoLabel.text = @"";
+        self.navigationItem.title = @"";
         _tag = @"";
         [self hideWaiting];
         [self settingPeriodFrom:self.startTime to:self.endTime withTag:str];
@@ -252,122 +235,9 @@
         [topData valifiedItems];
     }
     else {
-        self.infoLabel.text = tag;
+        self.navigationItem.title = tag;
     }
     
-}
-
--(IBAction)allTrades:(id)sender
-{
-    int tradeCount = 0;
-    int itemCount = 0;
-    [self.dataList removeAllObjects];
-    
-    for (TopTradeModel * _trade in tradeList) {
-        [self.dataList addObject:_trade];
-        tradeCount++;
-
-        for(TopOrderModel * order in _trade.orders){
-            [self.dataList addObject:order];
-            itemCount += order.num;
-        }
-    }
-
-    [self.tableView reloadData];
-    self.infoLabel.text = [[NSString alloc]initWithFormat:@"全:%d单%d件",tradeCount,itemCount];
-}
-
--(IBAction)notPayTrades:(id)sender
-{
-    int tradeCount = 0;
-    int itemCount = 0;
-    double notPaySale = 0;
-    [self.dataList removeAllObjects];
-    
-    for (TopTradeModel * _trade in tradeList) {
-        if([_trade.status isEqualToString:@"WAIT_BUYER_PAY"])
-        {
-            [self.dataList addObject:_trade];
-            tradeCount++;
-            for(TopOrderModel * order in _trade.orders){
-                [self.dataList addObject:order];
-                itemCount += order.num;
-                notPaySale += order.total_fee;
-            }
-        }
-    }
-    
-    [self.tableView reloadData];    
-    self.infoLabel.text = [[NSString alloc]initWithFormat:@"未:%d单%d件%4.2f元",tradeCount,itemCount,notPaySale];
-}
-
--(IBAction)payTrades:(id)sender
-{
-    int tradeCount = 0;
-    int itemCount = 0;
-    [self.dataList removeAllObjects];
-    
-    for (TopTradeModel * _trade in tradeList) {
-        if([_trade.status isEqualToString:@"WAIT_SELLER_SEND_GOODS"])
-        {
-            [self.dataList addObject:_trade];
-            tradeCount++;
-            
-            for(TopOrderModel * order in _trade.orders){
-                [self.dataList addObject:order];
-                itemCount += order.num;
-            }
-        }
-    }
-    
-    [self.tableView reloadData];    
-    self.infoLabel.text = [[NSString alloc]initWithFormat:@"卖:%d单%d件",tradeCount,itemCount];
-}
-
--(IBAction)sentTrades:(id)sender
-{
-    int tradeCount = 0;
-    int itemCount = 0;
-    [self.dataList removeAllObjects];
-    
-    for (TopTradeModel * _trade in tradeList) {
-        if([_trade.status isEqualToString:@"WAIT_BUYER_CONFIRM_GOODS"])
-        {
-            [self.dataList addObject:_trade];
-            tradeCount++;
-            
-            for(TopOrderModel * order in _trade.orders){
-                [self.dataList addObject:order];
-                itemCount += order.num;
-            }
-        }
-    }
-    
-    [self.tableView reloadData];    
-    self.infoLabel.text = [[NSString alloc]initWithFormat:@"发:%d单%d件",tradeCount,itemCount];
-}
--(IBAction)closedTrades:(id)sender
-{
-    int tradeCount = 0;
-    int itemCount = 0;
-    [self.dataList removeAllObjects];
-    
-    for (TopTradeModel * _trade in tradeList) {
-        if([_trade.status isEqualToString:@"TRADE_CLOSED_BY_TAOBAO"] ||
-           [_trade.status isEqualToString:@"TRADE_CLOSED"])
-        {
-            [self.dataList addObject:_trade];
-            tradeCount++;
-            
-            for(TopOrderModel * order in _trade.orders){
-                [self.dataList addObject:order];
-                itemCount += order.num;
-            }
-        }
-    }
-    
-    [self.tableView reloadData];    
-    self.infoLabel.text = [[NSString alloc]initWithFormat:@"关:%d单%d件",tradeCount,itemCount];
 }
 
 #pragma mark - table view
@@ -495,149 +365,12 @@
     {        
         trade = [dataList objectAtIndex:indexPath.row];
     
-        [self showEditPopover:trade.service_fee withNote:trade.note];
     }
     else if ([self.obj isKindOfClass: [TopOrderModel class] ]) {
         order = [dataList objectAtIndex:indexPath.row];
-        [self showEditPopover:order.refund_num withNote:@"REFUND-退货"];
     }
 }
 
--(void)showEditPopover:(int) val withNote:(NSString *) note
-{
-    EditController * popoverContent = [[EditController alloc]init];
-    popoverContent.val = val;
-    popoverContent.note = note;
-    
-    UIPopoverController * popoverController=[[UIPopoverController alloc]initWithContentViewController:popoverContent]; 
-    popoverController.delegate = self;
-    
-    
-    popoverContent.popController = popoverController;
-    popoverContent.superController =self;
-    
-    //popover显示的大小 
-    popoverController.popoverContentSize=CGSizeMake(280, 340); 
-    
-    //显示popover，告诉它是为一个矩形框设置popover 
-    [popoverController presentPopoverFromRect:CGRectMake(0, 0, 704, 0) inView:self.view 
-                     permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES]; 
-}
-
--(void)finishedEditPopover:(int)val withNote:(NSString *)note
-{
-    TopTradeModel * trade;
-    TopOrderModel * order;
-    if([self.obj isKindOfClass: [TopTradeModel class] ]) //if trade
-    {        
-        trade = (TopTradeModel *)obj;
-        
-        trade.service_fee = val;
-        trade.note = note;
-        [trade saveServiceFee];
-    }
-    else if ([self.obj isKindOfClass: [TopOrderModel class] ]) {
-        order = (TopOrderModel *) obj;
-        if(val > order.num)
-            return;
-        
-        order.refund_num = val;
-        [order saveRefundNum];
-    }
-    
-    [self configureView];
-}
-
--(IBAction)goNext:(id)sender
-{
-    if([_tag isEqualToString:@"ORDER_DAY"])
-    {
-        self.startTime = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:self.startTime];
-        self.endTime = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:self.endTime];
-    }
-    else if([_tag isEqualToString:@"ORDER_WEEK"])
-    {
-        self.startTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.startTime];
-        self.endTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.endTime];
-    }
-
-    [self getData];
-}
-
--(IBAction)goPrevious:(id)sender
-{
-    if(!self.nextBtn.enabled)
-        self.nextBtn.enabled = YES;
-    
-    if([_tag isEqualToString:@"ORDER_DAY"])
-    {
-        self.startTime = [[NSDate alloc]initWithTimeInterval:-(24*60*60) sinceDate:self.startTime];
-        self.endTime = [[NSDate alloc]initWithTimeInterval:-(24*60*60) sinceDate:self.endTime];
-    }
-    else if([_tag isEqualToString:@"ORDER_WEEK"])
-    {
-        self.startTime = [[NSDate alloc]initWithTimeInterval:-(7*24*60*60) sinceDate:self.startTime];
-        self.endTime = [[NSDate alloc]initWithTimeInterval:-(7*24*60*60) sinceDate:self.endTime];
-    }
-    
-    [self getData];
-}
-
--(IBAction)goSomeDay:(id)sender
-{
-    [self showCal];
-}
-
--(void)showCal
-{
-    NSDate * date = [[NSDate alloc]initWithTimeInterval:-(8*60*60) sinceDate:self.startTime];
-    KalViewController * calendarController = [[KalViewController alloc]initWithSelectedDate:date];
-    
-    calPopController=[[UIPopoverController alloc]initWithContentViewController:calendarController]; 
-    calPopController.delegate = self;
-    
-    calendarController.popController = calPopController;
-    
-    //popover显示的大小 
-    calPopController.popoverContentSize=CGSizeMake(320, 260); 
-    
-    //显示popover，告诉它是为一个矩形框设置popover 
-    
-    [calPopController presentPopoverFromBarButtonItem:searchBtn permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-//    [calPopController presentPopoverFromRect:searchBtn. inView:self.view 
-//                     permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES]; 
-}
-
--(void)hideCal
-{
-    [self.calPopController dismissPopoverAnimated:YES];
-}
-
-- (void)didSelectDate:(KalDate *)date
-{
-    [self hideCal];
-    //
-    NSDate * from;
-    NSDate * to;
-    from = [date NSDate];
-    from = [[NSDate alloc]initWithTimeInterval:(8*60*60) sinceDate:from];
-    if([_tag isEqualToString:@"ORDER_DAY"])
-    {
-        to = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:from];
-    }
-    else if([_tag isEqualToString:@"ORDER_WEEK"])
-    {
-        from = [DateHelper getFirstTimeOfWeek:from];
-        to = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.endTime];
-    }
-    
-    if([from timeIntervalSince1970] < [[NSDate date] timeIntervalSince1970])
-    {
-        self.startTime = from;
-        self.endTime = to;
-        [self getData];
-    }
-}
 
 #pragma mark - View lifecycle
 
@@ -663,7 +396,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = @"My First";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -685,22 +417,6 @@
 {
     // Return YES for supported orientations
     return YES;
-}
-
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = @"设置";//NSLocalizedString(@"Master", @"Master");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
 }
 
 @end

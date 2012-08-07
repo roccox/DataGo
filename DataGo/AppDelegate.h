@@ -8,8 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "TopSessionController.h"
+#import "SplashViewController.h"
+
+#import "TopData.h"
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,TaobaoDataDelegate>
+{
+    NSString * topSession;
+
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) SplashViewController * splashController;
+
+@property(strong,nonatomic) TopSessionController * sessionController;
+
+@property(strong,nonatomic) UITabBarController * mainController;
+
+@property(strong,nonatomic) NSString * topSession;
+
+-(void) showSessionCtrl;
+-(void) hideSessionCtrl;
+-(void) refreshSession;
 @end

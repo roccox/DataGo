@@ -17,9 +17,7 @@
 
 @implementation SentViewController
 
-@synthesize popController,tableView,dataList,itemList,infoLabel,startTime,endTime;
-
-@synthesize masterPopoverController = _masterPopoverController;
+@synthesize tableView,dataList,itemList,startTime,endTime;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,22 +39,18 @@
         self.endTime = end;
         [self showWaiting];
         
-        self.infoLabel.text = @"正在计算数据,请不要动......";
+        self.navigationItem.title = @"正在计算数据,请不要动......";
         NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(calculate) object:nil];
         [thread start];
         // Update the view.
         [self configureView];
     }
-    
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
 }
 
 -(void)calFinished
 {
     [self hideWaiting];    
-    self.infoLabel.text = @"计算结束......";
+    self.navigationItem.title = @"计算结束......";
     [self configureView];
 }
 
@@ -144,7 +138,7 @@
     for (TopItemModel * _item in itemList) {
         itemCount += _item.volume;
     }
-    self.infoLabel.text = [[NSString alloc]initWithFormat:@"%d",itemCount];  
+    self.navigationItem.title = [[NSString alloc]initWithFormat:@"%d",itemCount];  
     [self.tableView reloadData];
 }
 
@@ -208,7 +202,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = @"My Second";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -229,23 +222,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight;
+    return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
-
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = @"设置";//NSLocalizedString(@"Master", @"Master");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-}
-
 @end

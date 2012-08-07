@@ -10,11 +10,58 @@
 
 @implementation AppDelegate
 
+@synthesize sessionController,topSession,mainController;
+
+
+#pragma test delegate for taobao
+-(void) notifyItemRefresh:(BOOL)isFinished withTag:(NSString*) tag
+{
+    NSLog(@"%@",tag);
+}
+-(void) notifyTradeRefresh:(BOOL)isFinished withTag:(NSString*) tag
+{
+    NSLog(@"%@",tag);
+    
+}
+
+-(void)setTopSession:(NSString *)session
+{
+    topSession = session;
+    [[TopData getTopData] putSession:topSession];
+}
+
+-(void)refreshSession
+{
+    [self showSessionCtrl];
+}
+
+-(void)showSessionCtrl
+{
+    self.sessionController.modalPresentationStyle = UIModalPresentationFormSheet;
+    self.sessionController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    UISplitViewController * splitCtrl = (UISplitViewController *)self.window.rootViewController;
+    
+    [splitCtrl presentModalViewController:self.sessionController animated:YES];
+}
+
+-(void)hideSessionCtrl
+{
+    UISplitViewController * splitCtrl = (UISplitViewController *)self.window.rootViewController;
+    
+    [splitCtrl dismissModalViewControllerAnimated:YES];
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    return YES;
-}
+    SplashViewController * rootController = (SplashViewController *) self.window.rootViewController;
+    
+    mainController = [rootController.storyboard instantiateViewControllerWithIdentifier:@"mainCtrl"];
+    sessionController = [mainController.storyboard instantiateViewControllerWithIdentifier:@"sessionCtrl"];
+    
+    return YES;}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -31,6 +78,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    self.window.rootViewController = self.splashController;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

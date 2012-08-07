@@ -78,8 +78,6 @@
     
     //close
     
-    [self.popController dismissPopoverAnimated:YES];
-    [self.superController finishedEditPopover:self.val withNote:self.textView.text];
 }
 
 @end

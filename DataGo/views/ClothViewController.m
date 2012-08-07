@@ -14,10 +14,8 @@
 @end
 
 @implementation ClothViewController
-@synthesize dataList,tableView,item,popController;
-@synthesize searchField, itemList;
-
-@synthesize masterPopoverController = _masterPopoverController;
+@synthesize dataList,tableView,item;
+@synthesize itemList;
 
 #pragma mark - Managing the detail item
 
@@ -49,10 +47,6 @@
         // Update the view.
         [self configureView];
     }
-    
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
 }
 
 - (void)configureView
@@ -66,46 +60,6 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
-}
-
--(IBAction)showAllItems:(id)sender
-{
-    [self.dataList removeAllObjects];
-    for (TopItemModel * _item in self.itemList) {
-        [self.dataList addObject: _item];
-    }
-    [self configureView];
-}
-
--(IBAction)showZeroItems:(id)sender
-{
-    [self.dataList removeAllObjects];
-    for (TopItemModel * _item in self.itemList) {
-        if(_item.import_price < 0.01 && _item.import_price > -0.01)
-            [self.dataList addObject: _item];
-    }
-    [self configureView];
-}
-
--(IBAction)showSearchedItems:(id)sender
-{
-    [self.dataList removeAllObjects];
-    for (TopItemModel * _item in self.itemList) {
-        NSRange range = [_item.title rangeOfString:self.searchField.text];
-        if(range.length > 0)
-            [self.dataList addObject: _item];
-    }
-    [self.searchField resignFirstResponder];
-    [self configureView];
-}
-
--(IBAction)refreshData:(id)sender
-{
-    TopData * topData = [TopData getTopData];
-    topData.delegate = self;
-    self.searchField.text = @"更新中...";
-    [self showWaiting];
-    [topData refreshItems];
 }
 
 #pragma - taobao
@@ -134,13 +88,13 @@
             [self.dataList addObject:_item];
         }
         
-        self.searchField.text = @"";
+        self.navigationItem.title = @"";
         [self hideWaiting];
         //relaod
         [self configureView];
     }
     else
-        self.searchField.text = tag;
+        self.navigationItem.title = tag;
 }
 
 -(void) notifyTradeRefresh:(BOOL)isFinished withTag:(NSString*) tag
@@ -189,28 +143,6 @@
 {
     self.item = [dataList objectAtIndex:indexPath.row];
 
-    [self showEditPopover:self.item.import_price withNote:self.item.note];
-}
-
--(void)showEditPopover:(int) val withNote:(NSString * )note
-{
-    EditController * popoverContent = [[EditController alloc]init];
-    popoverContent.val = val;
-    popoverContent.note = note;
-    
-    UIPopoverController * popoverController=[[UIPopoverController alloc]initWithContentViewController:popoverContent]; 
-    popoverController.delegate = self;
-
-    
-    popoverContent.popController = popoverController;
-    popoverContent.superController =self;
-    
-    //popover显示的大小 
-    popoverController.popoverContentSize=CGSizeMake(280, 340); 
-
-    //显示popover，告诉它是为一个矩形框设置popover 
-    [popoverController presentPopoverFromRect:CGRectMake(0, 0, 704, 0) inView:self.view 
-                     permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES]; 
 }
 
 -(void)finishedEditPopover:(int)val withNote: (NSString *) note
@@ -242,7 +174,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = @"My Second";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -265,21 +196,4 @@
     // Return YES for supported orientations
     return YES;
 }
-
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = @"设置";//NSLocalizedString(@"Master", @"Master");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-}
-
 @end

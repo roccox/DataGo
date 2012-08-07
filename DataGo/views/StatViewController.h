@@ -12,7 +12,7 @@
 #import "DateHelper.h"
 
 
-@interface StatViewController : DetailViewController <UISplitViewControllerDelegate>{
+@interface StatViewController : DetailViewController {
     
     NSString * _tag;
     BOOL    isFirstLoad;
@@ -20,8 +20,6 @@
 }
 
 @property (nonatomic,strong) IBOutlet UIWebView * infoView;
-@property (nonatomic,strong) IBOutlet UIBarButtonItem * nextBtn;
-@property (nonatomic,strong) IBOutlet UILabel * infoLabel;
 @property (nonatomic,strong) NSDate * startTime;
 @property (nonatomic,strong) NSDate * endTime;
 
@@ -30,9 +28,4 @@
 @property (nonatomic,strong) TopTradeModel * trade;
 
 
--(IBAction)goNext:(id)sender;
--(IBAction)goPrevious:(id)sender;
--(IBAction)goSomeDay:(id)sender;
-
--(IBAction)reCal:(id)sender;
 @end

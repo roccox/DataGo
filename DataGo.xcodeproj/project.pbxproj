@@ -15,32 +15,28 @@
 		DDA27C5215D0B42F00908084 /* TopTradeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C4915D0B42F00908084 /* TopTradeModel.m */; };
 		DDA27C5315D0B42F00908084 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C4B15D0B42F00908084 /* Utility.m */; };
 		DDA27C5415D0B42F00908084 /* verydata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DDA27C4C15D0B42F00908084 /* verydata.sqlite */; };
-		DDA27C8D15D0B43E00908084 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA27C5715D0B43E00908084 /* DropboxSDK.framework */; };
 		DDA27C8E15D0B43E00908084 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C5A15D0B43E00908084 /* FMDatabase.m */; };
 		DDA27C8F15D0B43E00908084 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C5C15D0B43E00908084 /* FMDatabaseAdditions.m */; };
 		DDA27C9015D0B43E00908084 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C5E15D0B43E00908084 /* FMDatabasePool.m */; };
 		DDA27C9115D0B43E00908084 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6015D0B43E00908084 /* FMDatabaseQueue.m */; };
-		DDA27C9215D0B43E00908084 /* fmdb.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6115D0B43E00908084 /* fmdb.m */; };
 		DDA27C9315D0B43E00908084 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6315D0B43E00908084 /* FMResultSet.m */; };
 		DDA27C9415D0B43E00908084 /* Kal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DDA27C6515D0B43E00908084 /* Kal.bundle */; };
-		DDA27C9515D0B43E00908084 /* KalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6815D0B43E00908084 /* KalDataSource.m */; };
-		DDA27C9615D0B43E00908084 /* KalDate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6A15D0B43E00908084 /* KalDate.m */; };
-		DDA27C9715D0B43E00908084 /* KalGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6C15D0B43E00908084 /* KalGridView.m */; };
-		DDA27C9815D0B43E00908084 /* KalLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6E15D0B43E00908084 /* KalLogic.m */; };
-		DDA27C9915D0B43E00908084 /* KalMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7015D0B43E00908084 /* KalMonthView.m */; };
-		DDA27C9A15D0B43E00908084 /* KalTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7315D0B43E00908084 /* KalTileView.m */; };
-		DDA27C9B15D0B43E00908084 /* KalView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7515D0B43E00908084 /* KalView.m */; };
-		DDA27C9C15D0B43E00908084 /* KalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7715D0B43E00908084 /* KalViewController.m */; };
-		DDA27C9D15D0B43E00908084 /* NSDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7915D0B43E00908084 /* NSDateAdditions.m */; };
-		DDA27C9E15D0B43E00908084 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7B15D0B43E00908084 /* UIViewAdditions.m */; };
-		DDA27C9F15D0B43E00908084 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7E15D0B43E00908084 /* SDImageCache.m */; };
-		DDA27CA015D0B43E00908084 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8215D0B43E00908084 /* SDWebImageDecoder.m */; };
-		DDA27CA115D0B43E00908084 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8415D0B43E00908084 /* SDWebImageDownloader.m */; };
-		DDA27CA215D0B43E00908084 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8715D0B43E00908084 /* SDWebImageManager.m */; };
-		DDA27CA315D0B43E00908084 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8A15D0B43E00908084 /* SDWebImagePrefetcher.m */; };
-		DDA27CA415D0B43E00908084 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8C15D0B43E00908084 /* UIImageView+WebCache.m */; };
-		DDA27CB515D0B44700908084 /* EditController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CA815D0B44700908084 /* EditController.m */; };
-		DDA27CB615D0B44700908084 /* EditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA27CA915D0B44700908084 /* EditController.xib */; };
+		DDA27C9515D0B43E00908084 /* KalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6815D0B43E00908084 /* KalDataSource.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9615D0B43E00908084 /* KalDate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6A15D0B43E00908084 /* KalDate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9715D0B43E00908084 /* KalGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6C15D0B43E00908084 /* KalGridView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9815D0B43E00908084 /* KalLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C6E15D0B43E00908084 /* KalLogic.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9915D0B43E00908084 /* KalMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7015D0B43E00908084 /* KalMonthView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9A15D0B43E00908084 /* KalTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7315D0B43E00908084 /* KalTileView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9B15D0B43E00908084 /* KalView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7515D0B43E00908084 /* KalView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9C15D0B43E00908084 /* KalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7715D0B43E00908084 /* KalViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9D15D0B43E00908084 /* NSDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7915D0B43E00908084 /* NSDateAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9E15D0B43E00908084 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7B15D0B43E00908084 /* UIViewAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27C9F15D0B43E00908084 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C7E15D0B43E00908084 /* SDImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27CA015D0B43E00908084 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8215D0B43E00908084 /* SDWebImageDecoder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27CA115D0B43E00908084 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8415D0B43E00908084 /* SDWebImageDownloader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27CA215D0B43E00908084 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8715D0B43E00908084 /* SDWebImageManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27CA315D0B43E00908084 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8A15D0B43E00908084 /* SDWebImagePrefetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DDA27CA415D0B43E00908084 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27C8C15D0B43E00908084 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DDA27CB715D0B44700908084 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CAB15D0B44700908084 /* ItemCell.m */; };
 		DDA27CB815D0B44700908084 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA27CAC15D0B44700908084 /* ItemCell.xib */; };
 		DDA27CB915D0B44700908084 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CAE15D0B44700908084 /* OrderCell.m */; };
@@ -49,9 +45,7 @@
 		DDA27CBC15D0B44700908084 /* TradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA27CB215D0B44700908084 /* TradeCell.xib */; };
 		DDA27CBD15D0B44700908084 /* DateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CB415D0B44700908084 /* DateHelper.m */; };
 		DDA27CD115D0B44E00908084 /* ClothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC015D0B44E00908084 /* ClothViewController.m */; };
-		DDA27CD215D0B44E00908084 /* DateSelController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC215D0B44E00908084 /* DateSelController.m */; };
 		DDA27CD315D0B44E00908084 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC415D0B44E00908084 /* DetailViewController.m */; };
-		DDA27CD415D0B44E00908084 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC615D0B44E00908084 /* MasterViewController.m */; };
 		DDA27CD515D0B44E00908084 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CC815D0B44E00908084 /* OrderViewController.m */; };
 		DDA27CD615D0B44E00908084 /* SentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CCA15D0B44E00908084 /* SentViewController.m */; };
 		DDA27CD715D0B44E00908084 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA27CCC15D0B44E00908084 /* SplashViewController.m */; };
@@ -64,10 +58,8 @@
 		DDB6FF5115D0AB1C001A7AC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6FF5015D0AB1C001A7AC9 /* main.m */; };
 		DDB6FF5515D0AB1C001A7AC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6FF5415D0AB1C001A7AC9 /* AppDelegate.m */; };
 		DDB6FF5815D0AB1C001A7AC9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB6FF5615D0AB1C001A7AC9 /* MainStoryboard.storyboard */; };
-		DDB6FF5B15D0AB1C001A7AC9 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6FF5A15D0AB1C001A7AC9 /* FirstViewController.m */; };
 		DDB6FF5D15D0AB1C001A7AC9 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB6FF5C15D0AB1C001A7AC9 /* first.png */; };
 		DDB6FF5F15D0AB1C001A7AC9 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB6FF5E15D0AB1C001A7AC9 /* first@2x.png */; };
-		DDB6FF6215D0AB1C001A7AC9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB6FF6115D0AB1C001A7AC9 /* SecondViewController.m */; };
 		DDB6FF6415D0AB1C001A7AC9 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB6FF6315D0AB1C001A7AC9 /* second.png */; };
 		DDB6FF6615D0AB1C001A7AC9 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB6FF6515D0AB1C001A7AC9 /* second@2x.png */; };
 		DDB6FF7115D0ACF1001A7AC9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB6FF7015D0ACF1001A7AC9 /* QuartzCore.framework */; };
@@ -92,7 +84,6 @@
 		DDA27C4A15D0B42F00908084 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		DDA27C4B15D0B42F00908084 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		DDA27C4C15D0B42F00908084 /* verydata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = verydata.sqlite; sourceTree = "<group>"; };
-		DDA27C5715D0B43E00908084 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		DDA27C5915D0B43E00908084 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		DDA27C5A15D0B43E00908084 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		DDA27C5B15D0B43E00908084 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -101,7 +92,6 @@
 		DDA27C5E15D0B43E00908084 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		DDA27C5F15D0B43E00908084 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
 		DDA27C6015D0B43E00908084 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		DDA27C6115D0B43E00908084 /* fmdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fmdb.m; sourceTree = "<group>"; };
 		DDA27C6215D0B43E00908084 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		DDA27C6315D0B43E00908084 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		DDA27C6515D0B43E00908084 /* Kal.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Kal.bundle; sourceTree = "<group>"; };
@@ -143,9 +133,6 @@
 		DDA27C8A15D0B43E00908084 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		DDA27C8B15D0B43E00908084 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		DDA27C8C15D0B43E00908084 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
-		DDA27CA715D0B44700908084 /* EditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditController.h; sourceTree = "<group>"; };
-		DDA27CA815D0B44700908084 /* EditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditController.m; sourceTree = "<group>"; };
-		DDA27CA915D0B44700908084 /* EditController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditController.xib; sourceTree = "<group>"; };
 		DDA27CAA15D0B44700908084 /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		DDA27CAB15D0B44700908084 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		DDA27CAC15D0B44700908084 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
@@ -159,12 +146,8 @@
 		DDA27CB415D0B44700908084 /* DateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateHelper.m; sourceTree = "<group>"; };
 		DDA27CBF15D0B44E00908084 /* ClothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClothViewController.h; sourceTree = "<group>"; };
 		DDA27CC015D0B44E00908084 /* ClothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothViewController.m; sourceTree = "<group>"; };
-		DDA27CC115D0B44E00908084 /* DateSelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateSelController.h; sourceTree = "<group>"; };
-		DDA27CC215D0B44E00908084 /* DateSelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSelController.m; sourceTree = "<group>"; };
 		DDA27CC315D0B44E00908084 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		DDA27CC415D0B44E00908084 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		DDA27CC515D0B44E00908084 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		DDA27CC615D0B44E00908084 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		DDA27CC715D0B44E00908084 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		DDA27CC815D0B44E00908084 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		DDA27CC915D0B44E00908084 /* SentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentViewController.h; sourceTree = "<group>"; };
@@ -186,12 +169,8 @@
 		DDB6FF5315D0AB1C001A7AC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DDB6FF5415D0AB1C001A7AC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DDB6FF5715D0AB1C001A7AC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		DDB6FF5915D0AB1C001A7AC9 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		DDB6FF5A15D0AB1C001A7AC9 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		DDB6FF5C15D0AB1C001A7AC9 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		DDB6FF5E15D0AB1C001A7AC9 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		DDB6FF6015D0AB1C001A7AC9 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		DDB6FF6115D0AB1C001A7AC9 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		DDB6FF6315D0AB1C001A7AC9 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		DDB6FF6515D0AB1C001A7AC9 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		DDB6FF7015D0ACF1001A7AC9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -210,7 +189,6 @@
 				DDB6FF4515D0AB1C001A7AC9 /* UIKit.framework in Frameworks */,
 				DDB6FF4715D0AB1C001A7AC9 /* Foundation.framework in Frameworks */,
 				DDB6FF4915D0AB1C001A7AC9 /* CoreGraphics.framework in Frameworks */,
-				DDA27C8D15D0B43E00908084 /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +221,6 @@
 		DDA27C5615D0B43E00908084 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				DDA27C5715D0B43E00908084 /* DropboxSDK.framework */,
 				DDA27C5815D0B43E00908084 /* fmdb */,
 				DDA27C6415D0B43E00908084 /* kal */,
 				DDA27C7C15D0B43E00908084 /* SDWebImage */,
@@ -262,7 +239,6 @@
 				DDA27C5E15D0B43E00908084 /* FMDatabasePool.m */,
 				DDA27C5F15D0B43E00908084 /* FMDatabaseQueue.h */,
 				DDA27C6015D0B43E00908084 /* FMDatabaseQueue.m */,
-				DDA27C6115D0B43E00908084 /* fmdb.m */,
 				DDA27C6215D0B43E00908084 /* FMResultSet.h */,
 				DDA27C6315D0B43E00908084 /* FMResultSet.m */,
 			);
@@ -335,9 +311,6 @@
 		DDA27CA615D0B44700908084 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				DDA27CA715D0B44700908084 /* EditController.h */,
-				DDA27CA815D0B44700908084 /* EditController.m */,
-				DDA27CA915D0B44700908084 /* EditController.xib */,
 				DDA27CAA15D0B44700908084 /* ItemCell.h */,
 				DDA27CAB15D0B44700908084 /* ItemCell.m */,
 				DDA27CAC15D0B44700908084 /* ItemCell.xib */,
@@ -354,22 +327,18 @@
 		DDA27CBE15D0B44E00908084 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				DDA27CBF15D0B44E00908084 /* ClothViewController.h */,
-				DDA27CC015D0B44E00908084 /* ClothViewController.m */,
-				DDA27CC115D0B44E00908084 /* DateSelController.h */,
-				DDA27CC215D0B44E00908084 /* DateSelController.m */,
-				DDA27CC315D0B44E00908084 /* DetailViewController.h */,
-				DDA27CC415D0B44E00908084 /* DetailViewController.m */,
-				DDA27CC515D0B44E00908084 /* MasterViewController.h */,
-				DDA27CC615D0B44E00908084 /* MasterViewController.m */,
-				DDA27CC715D0B44E00908084 /* OrderViewController.h */,
-				DDA27CC815D0B44E00908084 /* OrderViewController.m */,
-				DDA27CC915D0B44E00908084 /* SentViewController.h */,
-				DDA27CCA15D0B44E00908084 /* SentViewController.m */,
 				DDA27CCB15D0B44E00908084 /* SplashViewController.h */,
 				DDA27CCC15D0B44E00908084 /* SplashViewController.m */,
+				DDA27CC315D0B44E00908084 /* DetailViewController.h */,
+				DDA27CC415D0B44E00908084 /* DetailViewController.m */,
+				DDA27CC715D0B44E00908084 /* OrderViewController.h */,
+				DDA27CC815D0B44E00908084 /* OrderViewController.m */,
 				DDA27CCD15D0B44E00908084 /* StatViewController.h */,
 				DDA27CCE15D0B44E00908084 /* StatViewController.m */,
+				DDA27CBF15D0B44E00908084 /* ClothViewController.h */,
+				DDA27CC015D0B44E00908084 /* ClothViewController.m */,
+				DDA27CC915D0B44E00908084 /* SentViewController.h */,
+				DDA27CCA15D0B44E00908084 /* SentViewController.m */,
 				DDA27CCF15D0B44E00908084 /* TopSessionController.h */,
 				DDA27CD015D0B44E00908084 /* TopSessionController.m */,
 			);
@@ -416,12 +385,8 @@
 				DDB6FF5315D0AB1C001A7AC9 /* AppDelegate.h */,
 				DDB6FF5415D0AB1C001A7AC9 /* AppDelegate.m */,
 				DDB6FF5615D0AB1C001A7AC9 /* MainStoryboard.storyboard */,
-				DDB6FF5915D0AB1C001A7AC9 /* FirstViewController.h */,
-				DDB6FF5A15D0AB1C001A7AC9 /* FirstViewController.m */,
 				DDB6FF5C15D0AB1C001A7AC9 /* first.png */,
 				DDB6FF5E15D0AB1C001A7AC9 /* first@2x.png */,
-				DDB6FF6015D0AB1C001A7AC9 /* SecondViewController.h */,
-				DDB6FF6115D0AB1C001A7AC9 /* SecondViewController.m */,
 				DDB6FF6315D0AB1C001A7AC9 /* second.png */,
 				DDB6FF6515D0AB1C001A7AC9 /* second@2x.png */,
 				DDB6FF4B15D0AB1C001A7AC9 /* Supporting Files */,
@@ -499,7 +464,6 @@
 				DDB6FF6615D0AB1C001A7AC9 /* second@2x.png in Resources */,
 				DDA27C5415D0B42F00908084 /* verydata.sqlite in Resources */,
 				DDA27C9415D0B43E00908084 /* Kal.bundle in Resources */,
-				DDA27CB615D0B44700908084 /* EditController.xib in Resources */,
 				DDA27CB815D0B44700908084 /* ItemCell.xib in Resources */,
 				DDA27CBA15D0B44700908084 /* OrderCell.xib in Resources */,
 				DDA27CBC15D0B44700908084 /* TradeCell.xib in Resources */,
@@ -515,8 +479,6 @@
 			files = (
 				DDB6FF5115D0AB1C001A7AC9 /* main.m in Sources */,
 				DDB6FF5515D0AB1C001A7AC9 /* AppDelegate.m in Sources */,
-				DDB6FF5B15D0AB1C001A7AC9 /* FirstViewController.m in Sources */,
-				DDB6FF6215D0AB1C001A7AC9 /* SecondViewController.m in Sources */,
 				DDA27C4D15D0B42F00908084 /* AppConstant.m in Sources */,
 				DDA27C4E15D0B42F00908084 /* DataBase.m in Sources */,
 				DDA27C4F15D0B42F00908084 /* TopData.m in Sources */,
@@ -528,7 +490,6 @@
 				DDA27C8F15D0B43E00908084 /* FMDatabaseAdditions.m in Sources */,
 				DDA27C9015D0B43E00908084 /* FMDatabasePool.m in Sources */,
 				DDA27C9115D0B43E00908084 /* FMDatabaseQueue.m in Sources */,
-				DDA27C9215D0B43E00908084 /* fmdb.m in Sources */,
 				DDA27C9315D0B43E00908084 /* FMResultSet.m in Sources */,
 				DDA27C9515D0B43E00908084 /* KalDataSource.m in Sources */,
 				DDA27C9615D0B43E00908084 /* KalDate.m in Sources */,
@@ -546,15 +507,12 @@
 				DDA27CA215D0B43E00908084 /* SDWebImageManager.m in Sources */,
 				DDA27CA315D0B43E00908084 /* SDWebImagePrefetcher.m in Sources */,
 				DDA27CA415D0B43E00908084 /* UIImageView+WebCache.m in Sources */,
-				DDA27CB515D0B44700908084 /* EditController.m in Sources */,
 				DDA27CB715D0B44700908084 /* ItemCell.m in Sources */,
 				DDA27CB915D0B44700908084 /* OrderCell.m in Sources */,
 				DDA27CBB15D0B44700908084 /* TradeCell.m in Sources */,
 				DDA27CBD15D0B44700908084 /* DateHelper.m in Sources */,
 				DDA27CD115D0B44E00908084 /* ClothViewController.m in Sources */,
-				DDA27CD215D0B44E00908084 /* DateSelController.m in Sources */,
 				DDA27CD315D0B44E00908084 /* DetailViewController.m in Sources */,
-				DDA27CD415D0B44E00908084 /* MasterViewController.m in Sources */,
 				DDA27CD515D0B44E00908084 /* OrderViewController.m in Sources */,
 				DDA27CD615D0B44E00908084 /* SentViewController.m in Sources */,
 				DDA27CD715D0B44E00908084 /* SplashViewController.m in Sources */,
@@ -607,7 +565,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -627,7 +585,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -644,7 +602,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataGo/DataGo-Prefix.pch";
 				INFOPLIST_FILE = "DataGo/DataGo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -660,7 +618,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DataGo/DataGo-Prefix.pch";
 				INFOPLIST_FILE = "DataGo/DataGo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

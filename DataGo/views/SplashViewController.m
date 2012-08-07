@@ -38,7 +38,7 @@
         self.passField.text = @"";
         AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         delegate.splashController = self;
-        delegate.window.rootViewController = delegate.splitViewController;
+        delegate.window.rootViewController = delegate.mainController;
     }
 }
 
@@ -69,7 +69,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight;
+    return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
 

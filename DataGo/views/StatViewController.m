@@ -20,10 +20,8 @@
 
 
 @synthesize infoView,tradeList;
-@synthesize startTime,endTime,trade,nextBtn,infoLabel;
+@synthesize startTime,endTime,trade;
 
-
-@synthesize masterPopoverController = _masterPopoverController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +36,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.infoLabel.text = @"正在计算数据,请不要动......";
+    self.navigationItem.title = @"正在计算数据,请不要动......";
     self.infoView.scrollView.contentSize = CGSizeMake(703, 1280);
     isFirstLoad = YES;
     if(report.length >10)
@@ -72,32 +70,20 @@
         // Update the view.
         [self configureView];
     }
-    
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
 }
 
 - (void)configureView
 {
-    if ([self.endTime timeIntervalSince1970] > [[[NSDate alloc]initWithTimeIntervalSinceNow:(8*60*60)] timeIntervalSince1970]) {
-        self.nextBtn.enabled = NO;
-    }
-    else {
-        self.nextBtn.enabled = YES;
-    }
-    
-
     [self showWaiting];
     
-    self.infoLabel.text = @"正在计算数据,请不要动......";
+    self.navigationItem.title = @"正在计算数据,请不要动......";
     NSThread * thread = [[NSThread alloc]initWithTarget:self selector:@selector(calculate) object:nil];
     [thread start];
 }
 
 -(void)calFinished
 {
-    self.infoLabel.text = @"计算结束......";
+    self.navigationItem.title = @"计算结束......";
     [self.infoView loadHTMLString:report baseURL:[[NSURL alloc]initWithString: @"http://localhost/"]];
     [self hideWaiting];
 
@@ -172,57 +158,6 @@
     [self performSelectorOnMainThread:@selector(calFinished) withObject:nil waitUntilDone:NO];
 }
 
--(IBAction)goNext:(id)sender
-{
-    int count = 0;
-    if([_tag isEqualToString:@"STAT_MONTH"])
-    {
-        NSDate * refDate = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:self.endTime];
-        self.startTime = [DateHelper getFirstTimeOfMonth:refDate];
-        count = [DateHelper getDayCountOfMonth:self.startTime];
-        self.endTime = [[NSDate alloc]initWithTimeInterval:(count*24*60*60) sinceDate:self.startTime];
-    }
-    else if([_tag isEqualToString:@"STAT_YEAR"])    //TODO
-    {
-        /*
-        self.startTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.startTime];
-        self.endTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.endTime];
-         */
-    }
-        
-    [self configureView];
-}
-
--(IBAction)goPrevious:(id)sender
-{
-    int count = 0;
-    if([_tag isEqualToString:@"STAT_MONTH"])
-    {
-        NSDate * refDate = [[NSDate alloc]initWithTimeInterval:-(24*60*60) sinceDate:self.startTime];
-        self.startTime = [DateHelper getFirstTimeOfMonth:refDate];
-        count = [DateHelper getDayCountOfMonth:self.startTime];
-        self.endTime = [[NSDate alloc]initWithTimeInterval:(count*24*60*60) sinceDate:self.startTime];
-    }
-    else if([_tag isEqualToString:@"STAT_YEAR"])    //TODO
-    {
-        /*
-         self.startTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.startTime];
-         self.endTime = [[NSDate alloc]initWithTimeInterval:(7*24*60*60) sinceDate:self.endTime];
-         */
-    }
-    
-    [self configureView];
-}
-
--(IBAction)goSomeDay:(id)sender
-{
-    
-}
-
--(IBAction)reCal:(id)sender
-{
-    [self configureView];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -236,7 +171,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.title = @"My First";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -253,25 +187,6 @@
 {
 	[super viewDidDisappear:animated];
 }
-
-
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = @"设置";//NSLocalizedString(@"Master", @"Master");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-}
-
-
 @end
 
 

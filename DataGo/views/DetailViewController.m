@@ -11,7 +11,7 @@
 
 @implementation DetailViewController
 
-@synthesize masterPopoverController,waitingView,isBusy;
+@synthesize waitingView,isBusy;
 
 #pragma mark - Managing the detail item
 -(void)settingPeriodFrom: (NSDate *)start to:(NSDate *) end withTag:(NSString *)tag
@@ -19,10 +19,6 @@
 
 }
 
--(void)finishedEditPopover:(int)val withNote: (NSString *) note
-{
-    
-}
 -(NSString *) formatDouble:(double) val
 {
     NSString * str = [[NSString alloc]initWithFormat:@"%6.2f",val];

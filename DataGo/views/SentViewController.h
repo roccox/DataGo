@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "TopData.h"
-#import "EditController.h"
 
 #import "DetailViewController.h"
 
@@ -16,16 +15,13 @@
 #import "SDWebImageDownloaderDelegate.h"
 #import "UIImageView+WebCache.h"
 
-@interface SentViewController : DetailViewController <UISplitViewControllerDelegate,UITableViewDelegate,UITableViewDataSource,UIPopoverControllerDelegate,TaobaoDataDelegate>{
+@interface SentViewController : DetailViewController <UITableViewDelegate,UITableViewDataSource,TaobaoDataDelegate>{
     
     NSString * _tag;
     
 }
 
-@property (nonatomic,strong) UIPopoverController * popController;
-
 @property (nonatomic,strong) IBOutlet UITableView * tableView;
-@property (nonatomic,strong) IBOutlet UITextField * infoLabel;
 
 @property (nonatomic,strong) NSMutableArray * dataList;
 @property (nonatomic,strong) NSMutableArray * itemList;
