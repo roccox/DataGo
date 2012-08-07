@@ -12,6 +12,8 @@
 
 @interface OrderViewController ()
 - (void)configureView;
+- (void)hideToolView;
+- (void)showToolView;
 @end
 
 @implementation OrderViewController
@@ -186,7 +188,7 @@
         self.tableView.frame = frame;
     }
     
-    [self.toolView removeFromSuperview];
+    [self hideToolView];
     
     [self.infoView loadHTMLString:report baseURL:[[NSURL alloc]initWithString: @"http://localhost/"]];
     // Update the user interface for the detail item.
@@ -209,11 +211,43 @@
         [self.toolView removeFromSuperview];
 }
 
+-(void)hideToolView
+{
+    if([self.toolView superview] != NULL)
+        [self.toolView removeFromSuperview];
+}
+
+-(void)showToolView
+{
+    if([self.toolView superview] == NULL)
+        [self.rootView addSubview:self.toolView];
+}
+
+-(IBAction)switchPeriod:(id)sender
+{
+    if(isDayView)
+    {
+        isDayView = false;
+        self.navigationItem.leftBarButtonItem.title = @"日";
+        [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"ORDER_WEEK"];
+    }
+    else
+    {
+        isDayView = true;
+        self.navigationItem.leftBarButtonItem.title = @"周";
+        [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"ORDER_DAY"];
+    }
+
+}
+
 -(IBAction)updateData:(id)sender
 {
     TopData * topData = [TopData getTopData];
     topData.delegate = self;
     self.navigationItem.title = @"更新中......";
+
+    [self hideToolView];
+
     [self showWaiting];
     [topData refreshTrades];
 }
@@ -265,7 +299,9 @@
             itemCount += order.num;
         }
     }
-    
+
+    [self hideToolView];
+
     [self.tableView reloadData];
     self.navigationItem.title = [[NSString alloc]initWithFormat:@"全:%d单%d件",tradeCount,itemCount];
 }
@@ -289,6 +325,8 @@
             }
         }
     }
+
+    [self hideToolView];
     
     [self.tableView reloadData];
     self.navigationItem.title = [[NSString alloc]initWithFormat:@"未:%d单%d件%4.2f元",tradeCount,itemCount,notPaySale];
@@ -313,6 +351,8 @@
         }
     }
     
+    [self hideToolView];
+
     [self.tableView reloadData];
     self.navigationItem.title = [[NSString alloc]initWithFormat:@"卖:%d单%d件",tradeCount,itemCount];
 }
@@ -336,6 +376,8 @@
         }
     }
     
+    [self hideToolView];
+
     [self.tableView reloadData];
     self.navigationItem.title = [[NSString alloc]initWithFormat:@"发:%d单%d件",tradeCount,itemCount];
 }
@@ -358,6 +400,8 @@
             }
         }
     }
+
+    [self hideToolView];
     
     [self.tableView reloadData];
     self.navigationItem.title = [[NSString alloc]initWithFormat:@"关:%d单%d件",tradeCount,itemCount];
@@ -502,6 +546,7 @@
 {
     [super viewDidLoad];
     isFirstLoad = YES;
+    isDayView = YES;
 	// Do any additional setup after loading the view, typically from a nib.
     self.startTime = [DateHelper getBeginOfDay:[[NSDate alloc]initWithTimeIntervalSinceNow:(8*60*60)]];
     self.endTime = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:self.startTime];

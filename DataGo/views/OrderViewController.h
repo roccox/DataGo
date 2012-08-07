@@ -25,6 +25,7 @@
     NSString * _tag;
     BOOL    isFirstLoad;
     NSString * report;
+    BOOL    isDayView;
 }
 
 @property (nonatomic,strong) IBOutlet UITableView * tableView;
@@ -39,9 +40,11 @@
 @property (nonatomic,strong) IBOutlet UIView * toolView;
 @property (nonatomic,strong) IBOutlet UIView * rootView;
 
+
 @property (nonatomic,strong) id obj;
 
 -(IBAction)showHideTools:(id)sender;
+-(IBAction)switchPeriod:(id)sender;
 
 -(IBAction)updateData:(id)sender;
 
