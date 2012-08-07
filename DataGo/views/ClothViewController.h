@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TopData.h"
 #import "DetailViewController.h"
+#import "AppDelegate.h"
 
 #import "SDWebImageManagerDelegate.h"
 #import "SDWebImageDownloaderDelegate.h"

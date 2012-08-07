@@ -143,16 +143,26 @@
 {
     self.item = [dataList objectAtIndex:indexPath.row];
 
+    EditViewController * edit = (EditViewController * )[self getEditController];
+    edit.superController = self;
+
+    edit.val = self.item.import_price;
+    edit.note = @"PRICE";
+        
+    [self.navigationController pushViewController:edit animated:YES];
+
 }
 
--(void)finishedEditPopover:(int)val withNote: (NSString *) note
+
+-(void)finishedEdit:(UIViewController *)editCtrl
 {
-    self.item.import_price = val;
-    self.item.note = note;
+    EditViewController * edit = (EditViewController *)editCtrl;
+    
+    self.item.import_price = edit.val;
+    self.item.note = edit.textView.text;
     [self.item saveImportPrice];
     [self.tableView reloadData];
 }
-
 
 
 #pragma mark - View lifecycle

@@ -40,6 +40,8 @@
     self.textView.text = self.note;
     if([self.note hasPrefix:@"REFUND"])
         self.textView.text = @"请输入退货数量";
+    else if([self.note hasPrefix:@"PRICE"])
+        self.textView.text = @"请输入进货价";
     else
         self.textView.text = @"请输入瑕疵费";
 }
