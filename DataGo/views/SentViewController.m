@@ -76,7 +76,8 @@
     for (TopTradeModel * _trade in tradeList) {
         if([_trade.status isEqualToString:@"WAIT_SELLER_SEND_GOODS"])
             for(TopOrderModel * order in _trade.orders){
-                [self.dataList addObject:order];
+                if([order.status isEqualToString:@"WAIT_SELLER_SEND_GOODS"])
+                    [self.dataList addObject:order];
             }
     }
     //convert to items
@@ -189,10 +190,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.startTime = [[NSDate alloc]initWithTimeIntervalSinceNow:8*60*60];
-    self.endTime = [[NSDate alloc]initWithTimeInterval:(-7*24*60*60) sinceDate:self.startTime];
-    [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"DELIVERY"];
-
 //    [self configureView];
 }
 
@@ -213,6 +210,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.startTime = [[NSDate alloc]initWithTimeIntervalSinceNow:8*60*60];
+    self.endTime = [[NSDate alloc]initWithTimeInterval:(-7*24*60*60) sinceDate:self.startTime];
+    [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"DELIVERY"];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

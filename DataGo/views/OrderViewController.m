@@ -200,7 +200,11 @@
 -(IBAction)showHideTools:(id)sender
 {
     if([self.toolView superview] == NULL)
+    {
         [self.rootView addSubview:self.toolView];
+        if(self.toolView.hidden)
+            self.toolView.hidden = false;
+    }
     else
         [self.toolView removeFromSuperview];
 }
@@ -215,6 +219,9 @@
 {
     if([self.toolView superview] == NULL)
         [self.rootView addSubview:self.toolView];
+
+    if(self.toolView.hidden)
+        self.toolView.hidden = false;
 }
 
 -(IBAction)switchPeriod:(id)sender
@@ -296,7 +303,7 @@
     NSDate * from;
     NSDate * to;
     from = datePicker.date;
-    from = [[NSDate alloc]initWithTimeInterval:(8*60*60) sinceDate:from];
+    from = [DateHelper getBeginOfDay:from];
     if([_tag isEqualToString:@"ORDER_DAY"])
     {
         to = [[NSDate alloc]initWithTimeInterval:(24*60*60) sinceDate:from];
@@ -637,6 +644,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UISwipeGestureRecognizer *recognizer;
+    
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [[self view] addGestureRecognizer:recognizer];
+    
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [[self view] addGestureRecognizer:recognizer];
+    
     isFirstLoad = YES;
     isDayView = YES;
 	// Do any additional setup after loading the view, typically from a nib.
@@ -645,6 +664,24 @@
     
     [self settingPeriodFrom:self.startTime to:self.endTime withTag:@"ORDER_DAY"];
 
+}
+
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+    
+    NSLog(@"swiping");
+
+    if(self.isBusy)
+        return;
+    
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionLeft) {
+        [self goPrevious:self];
+    }
+    
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
+        [self goNext:self];
+    }
+    
 }
 
 - (void)viewDidUnload

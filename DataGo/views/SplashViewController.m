@@ -36,7 +36,11 @@
     {
         [self endMonitor];
         self.passField.text = @"";
-        AppDelegate * delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+        UIApplication * app = [UIApplication sharedApplication];
+        [app setStatusBarHidden:NO];
+
+        AppDelegate * delegate = (AppDelegate *)app.delegate;
         delegate.splashController = self;
         delegate.window.rootViewController = delegate.mainController;
     }
